@@ -1,0 +1,73 @@
+html, body {
+    font-family: 'Roboto Slab', serif;
+    height: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    max-height: 15%;
+    min-height: 15%;
+    width: 100%;
+    background-color: #D2EAF5;
+}
+
+header img {
+    display: block;
+    max-height: 100%;
+    max-width: 60%;
+    padding: 1%;
+}
+
+header span {
+    color: #022239;
+    align-self: center;
+    font-size: .8rem;
+    margin-right: -1rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    background-color: #D2EAF5;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 5% .5rem 5%;
+}
+
+ul {
+    display: flex;
+    gap: 1rem;
+    list-style-type: none;
+}
+
+.contact-nav {
+    color: #022239;
+    align-self: center;
+    transition: all 2s;
+}
+
+.contact-nav:hover {
+    color: #00C4EE;
+}
+
+#new-contact {
+    font-size: 1.2rem;
+}
+
+.contacts {
+    border: 2px solid #022239;
+    background-color: white;
+    min-height: 415px;
+    margin: 0 5%;
+}
+
+#search {
+    margin: 1rem 5%;
+    width: 89.2%;
+}
