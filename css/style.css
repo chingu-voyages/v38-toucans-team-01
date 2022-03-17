@@ -60,7 +60,7 @@ button:hover {
     position: absolute;
     /* visibility: hidden; */
     left: 8%;
-    top: 39%;
+    top: 38%;
     height: 30%;
     width: 40%;
 }
@@ -69,7 +69,7 @@ button:hover {
     position: absolute;
     /* visibility: hidden; */
     right: 8%;
-    top: 32%;
+    top: 38%;
     height: 30%;
     width: 40%;
 } 
@@ -132,7 +132,7 @@ button:hover {
 	margin-bottom: 30px;
 	border-radius: 3px;
 }
-.form li:last-child{
+.form li:nth-last-child(2) {
 	border:none;
 	margin-bottom: 0px;
 	text-align: center;
@@ -149,13 +149,7 @@ button:hover {
 	overflow: hidden;
 }
 .form input[type="text"],
-.form input[type="date"],
-.form input[type="datetime"],
 .form input[type="email"],
-.form input[type="number"],
-.form input[type="search"],
-.form input[type="time"],
-.form input[type="url"],
 .form input[type="password"],
 .form textarea,
 .form select 
@@ -186,8 +180,7 @@ button:hover {
 .form textarea{
 	resize:none;
 }
-.form input[type="submit"],
-.form input[type="button"]{
+.form input[type="submit"] {
 	height: 2rem;
     width: 30%;
     border: none;
@@ -196,8 +189,21 @@ button:hover {
     transition: all 2s;
     position: relative;
 }
-.form input[type="submit"]:hover,
-.form input[type="button"]:hover{
+.form input[type="submit"]:hover {
 	color: #00C4EE;
     background-color: #022239;
+}
+
+.form .cancel {
+    text-align: center;
+    color: #022239;
+    background-color: white;
+    border: none;
+    padding: 0;
+    outline: inherit;
+    transition: all 2s;
+}
+
+.form .cancel:hover {
+    color: #00C4EE;
 }
