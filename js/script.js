@@ -58,6 +58,7 @@ contacts.push(davidOrtiz);
 document.getElementById("inner").addEventListener("click",innerCircle);
 
 function innerCircle() {
+    document.getElementById("contacts").innerText = "";
     for(i=0;i<contacts.length;i++) {
         if(contacts[i].circle == "Inner Circle") {
             document.getElementById("contacts").innerText += contacts[i].firstName;
@@ -68,6 +69,7 @@ function innerCircle() {
 document.getElementById("outer").addEventListener("click",outerCircle);
 
 function outerCircle() {
+    document.getElementById("contacts").innerText = "";
     for(i=0;i<contacts.length;i++) {
         if(contacts[i].circle == "Outer Circle") {
             document.getElementById("contacts").innerText += contacts[i].firstName;
@@ -78,6 +80,7 @@ function outerCircle() {
 document.getElementById("network").addEventListener("click",network);
 
 function network() {
+    document.getElementById("contacts").innerText = "";
     for(i=0;i<contacts.length;i++) {
         if(contacts[i].circle == "Network") {
             document.getElementById("contacts").innerText += contacts[i].firstName;
