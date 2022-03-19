@@ -53,7 +53,14 @@ contacts.push(sammySosa);
 contacts.push(davidOrtiz);
   
 
+document.getElementById("all").addEventListener("click",all);
 
+function all() {
+    document.getElementById("contacts").innerText = "";
+    for(i=0;i<contacts.length;i++) {
+        document.getElementById("contacts").innerText += contacts[i].firstName + " " + contacts[i].lastName;   
+    }
+}
 
 document.getElementById("inner").addEventListener("click",innerCircle);
 
@@ -61,7 +68,7 @@ function innerCircle() {
     document.getElementById("contacts").innerText = "";
     for(i=0;i<contacts.length;i++) {
         if(contacts[i].circle == "Inner Circle") {
-            document.getElementById("contacts").innerText += contacts[i].firstName;
+            document.getElementById("contacts").innerText += contacts[i].firstName + " " + contacts[i].lastName;
         }
     }
 }
@@ -72,7 +79,7 @@ function outerCircle() {
     document.getElementById("contacts").innerText = "";
     for(i=0;i<contacts.length;i++) {
         if(contacts[i].circle == "Outer Circle") {
-            document.getElementById("contacts").innerText += contacts[i].firstName;
+            document.getElementById("contacts").innerText += contacts[i].firstName + " " + contacts[i].lastName;
         }
     }
 }
@@ -83,7 +90,7 @@ function network() {
     document.getElementById("contacts").innerText = "";
     for(i=0;i<contacts.length;i++) {
         if(contacts[i].circle == "Network") {
-            document.getElementById("contacts").innerText += contacts[i].firstName;
+            document.getElementById("contacts").innerText += contacts[i].firstName + " " + contacts[i].lastName;
         }
     }
 }

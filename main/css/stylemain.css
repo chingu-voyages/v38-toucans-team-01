@@ -69,6 +69,25 @@ ul {
     margin: 0 5%;
 }
 
+.individual {
+    display: flex;
+    justify-content: space-evenly;
+    border: 2px solid #022239;
+    background-color: #D2EAF5;
+    min-height: 2rem;
+    align-items: center;
+    margin: 2px;
+}
+
+.individual span {
+    color: #022239;
+}
+
+.ind-name {
+    width: 40%;
+    text-align: center;
+}
+
 #search {
     margin: 1rem 5%;
     width: 89.2%;
