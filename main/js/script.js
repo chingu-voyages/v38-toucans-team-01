@@ -290,3 +290,26 @@ function network() {
         }
     }
 }
+
+document.getElementById("search").addEventListener("keyup", search);
+let param = document.getElementById("search").value;
+
+function search() {
+    document.getElementById("contacts").innerHTML = "";
+    let param = document.getElementById("search").value.toLowerCase();
+    for(i=0;i<contacts.length;i++) {
+        if(contacts[i].firstName.toLowerCase().includes(param) || contacts[i].lastName.toLowerCase().includes(param)) {
+            contactDiv = document.getElementById("contacts");
+            contactName = document.createTextNode(`${contacts[i].firstName} ${contacts[i].lastName}`);
+            phoneNumber = document.createTextNode(`${contacts[i].cellNumber}`)
+            newDiv = document.createElement("div");      
+            let text = [`${contacts[i].firstName} ${contacts[i].lastName}`, `${contacts[i].twitter}`, `${contacts[i].instagram}`, `${contacts[i].facebook}`];
+            contactDiv.appendChild(newDiv);
+            for(j=0;j<text.length;j++) {
+                newSpan = document.createElement("span");
+                newSpan.innerText = text[j];
+                newDiv.appendChild(newSpan);
+            };
+        }
+    }
+}
