@@ -1,81 +1,86 @@
-const contact = {
-    firstName: "",
-    lastName: "",
-    birthDate: "",
-    cellNumber: "",
-    workNumber: "",
-    email: "",
-    address: "",
-    twitter: "",
-    instagram: "",
-    facebook: "",
-    circle: "",
-};
+let contacts = [];
 
-const davidOrtiz = Object.create(contact);
+let davidOrtiz = {
 
-davidOrtiz.firstName = "David";
-davidOrtiz.lastName = "Ortiz";
-davidOrtiz.birthDate = "03/15/68";
-davidOrtiz.cellNumber = "123-4567";
-davidOrtiz.workNumber = "444-9000";
-davidOrtiz.email = "bigpapi@redsox.com";
-davidOrtiz.address = "Boston";
-davidOrtiz.twitter = "@papi";
-davidOrtiz.instagram = "#papi";
-davidOrtiz.facebook = "facebook.com";
-davidOrtiz.circle = "Inner Circle";
+"firstName" : "David",
+"lastName" : "Ortiz",
+"birthDate" : "03/15/68",
+"cellNumber" : "123-4567",
+"workNumber" : "444-9000",
+"email" : "bigpapi@redsox.com",
+"address" : "Boston",
+"twitter" : "@papi",
+"instagram" : "#papi",
+"facebook" : "facebook.com",
+"circle" : "Inner Circle",
+  
+}  
 
-const sammySosa = Object.create(contact);
+let sammySosa = {
 
-sammySosa.firstName = "Sammy";
-sammySosa.lastName = "Sosa";
-sammySosa.birthDate = "01/01/66";
-sammySosa.cellNumber = "867-5309";
-sammySosa.workNumber = "888-4000";
-sammySosa.email = "bigslugs@hotmail.com";
-sammySosa.address = "123 Home Run Derby";
-sammySosa.twitter = "@sosa";
-sammySosa.instagram = "#sosa";
-sammySosa.facebook = "facebook.com";
-sammySosa.circle = "Outer Circle";
+"firstName" : "Sammy",
+"lastName" : "Sosa",
+"birthDate" : "01/01/66",
+"cellNumber" : "867-5309",
+"workNumber" : "888-4000",
+"email" : "bigslugs@hotmail.com",
+"address" : "123 Home Run Derby",
+"twitter" : "@sosa",
+"instagram" : "#sosa",
+"facebook" : "facebook.com",
+"circle" : "Outer Circle",
+  
+}  
 
-const robinsonCano = Object.create(contact);
+let robinsonCano = {
 
-robinsonCano.firstName = "Robinson";
-robinsonCano.lastName = "Cano";
-robinsonCano.birthDate = "02/10/67";
-robinsonCano.cellNumber = "567-8901";
-robinsonCano.workNumber = "555-0001";
-robinsonCano.email = "yankeeboy@gmail.com";
-robinsonCano.address = "456 New York Drive";
-robinsonCano.twitter = "@cano";
-robinsonCano.instagram = "#cano";
-robinsonCano.facebook = "facebook.com";
-robinsonCano.circle = "Network";
+"firstName" : "Robinson",
+"lastName" : "Cano",
+"birthDate" : "02/10/67",
+"cellNumber" : "567-8901",
+"workNumber" : "555-0001",
+"email" : "yankeeboy@gmail.com",
+"address" : "456 New York Drive",
+"twitter" : "@cano",
+"instagram" : "#cano",
+"facebook" : "facebook.com",
+"circle" : "Network",
 
-let contacts = [
-    {
-        davidOrtiz
-    },
-    {
-        robinsonCano
-    },
-    {
-        sammySosa
-    },
-]
+}
+
+contacts.push(robinsonCano);
+contacts.push(sammySosa);
+contacts.push(davidOrtiz);
+  
+
+
 
 document.getElementById("inner").addEventListener("click",innerCircle);
 
 function innerCircle() {
-    for(i=0;i>contacts.length;i++) {
-        if(contact.circle == "Inner") {
-            document.getElementById("contacts").innerText += contact.firstName;
+    for(i=0;i<contacts.length;i++) {
+        if(contacts[i].circle == "Inner Circle") {
+            document.getElementById("contacts").innerText += contacts[i].firstName;
         }
     }
 }
 
 document.getElementById("outer").addEventListener("click",outerCircle);
 
+function outerCircle() {
+    for(i=0;i<contacts.length;i++) {
+        if(contacts[i].circle == "Outer Circle") {
+            document.getElementById("contacts").innerText += contacts[i].firstName;
+        }
+    }
+}
+
 document.getElementById("network").addEventListener("click",network);
+
+function network() {
+    for(i=0;i<contacts.length;i++) {
+        if(contacts[i].circle == "Network") {
+            document.getElementById("contacts").innerText += contacts[i].firstName;
+        }
+    }
+}
