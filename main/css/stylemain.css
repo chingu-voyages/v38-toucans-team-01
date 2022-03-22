@@ -93,7 +93,7 @@ div span {
 }
 
 div :nth-child(1) {
-    width: 40%;
+    width: 50%;
     text-align: center;
 }
 
