@@ -3,6 +3,7 @@ html, body {
     height: 100%;
     min-height: 100%;
     box-sizing: border-box;
+    background-color: #D2EAF5;
 }
 
 header {
@@ -108,3 +109,118 @@ a {
     margin: 1rem 5%;
     width: 89.2%;
 }
+
+.form {
+	min-width: fit-content;
+    min-height: fit-content;
+	background:#fff;
+	border-radius:2px;
+    margin: .5rem;
+	padding: 1rem;
+}
+
+.form h1{
+	display: block;
+	text-align: center;
+	padding: 0;
+	margin: 0px 0px 20px 0px;
+	color: #5C5C5C;
+	font-size:x-large;
+}
+.form ul{
+    display: flex;
+    flex-direction: column;
+	list-style:none;
+	padding:0;
+	margin:0;	
+}
+.form li{
+	display: block;
+	padding: 9px;
+	border:1px solid #DDDDDD;
+	margin-bottom: 30px;
+	border-radius: 3px;
+}
+.form li:nth-last-child(2) {
+	border:none;
+	margin-bottom: 0px;
+	text-align: center;
+}
+.form li > label{
+	display: block;
+	float: left;
+	margin-top: -19px;
+	background: #FFFFFF;
+	height: 14px;
+	padding: 2px 5px 2px 5px;
+	color: #B9B9B9;
+	font-size: 14px;
+	overflow: hidden;
+}
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"],
+.form textarea,
+.form select 
+{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	display: block;
+	outline: none;
+	border: none;
+	height: 25px;
+	line-height: 25px;
+	font-size: 16px;
+	padding: 0;
+}
+
+.form li > span{
+	background: #F3F3F3;
+	display: block;
+	padding: 3px;
+	margin: 0 -9px -9px -9px;
+	text-align: center;
+	color: #C0C0C0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+.form textarea{
+	resize:none;
+}
+.form input[type="submit"] {
+	height: 2rem;
+    width: 30%;
+    border: none;
+    color: #022239;
+    background-color: #00C4EE;
+    transition: all 2s;
+    position: relative;
+}
+.form input[type="submit"]:hover {
+	color: #00C4EE;
+    background-color: #022239;
+}
+
+.form .cancel {
+    text-align: center;
+    color: #022239;
+    background-color: white;
+    border: none;
+    padding: 0;
+    outline: inherit;
+    transition: all 2s;
+}
+
+.form .cancel:hover {
+    color: #00C4EE;
+}
+
+#newContact {
+    position: absolute;
+    display: none;
+    top: 0%;
+    height: 100%;
+    width: 100%;
+} 

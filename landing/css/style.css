@@ -58,20 +58,22 @@ button:hover {
 
  #login {
     position: absolute;
-    /* visibility: hidden; */
+    display: none;
     left: 8%;
     top: 38%;
     height: 30%;
     width: 40%;
+    transition: all 2s;
 }
 
 #signup {
     position: absolute;
-    /* visibility: hidden; */
+    display: none;
     right: 8%;
     top: 38%;
     height: 30%;
     width: 40%;
+    transition: all 2s;
 } 
 
 /* #logo:hover #login {

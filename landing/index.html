@@ -17,12 +17,12 @@
             <img src="img/durante-logo/vector/default.svg" alt="Durante Logo">
         </section>
         <section class="login">
-            <button id="logbutton">
+            <button id="logbutton" onclick="login()">
                 <span>
                     Log In
                 </span>
             </button>    
-            <button id="signbutton">
+            <button id="signbutton" onclick="signup()">
                 <span>
                     Sign Up
                 </span>   
@@ -47,7 +47,7 @@
                         <input type="submit" value="Log In">
                     </li>
                     <li class="cancel">
-                        <input class="cancel" type="button" value="Cancel">
+                        <input class="cancel" type="button" onclick="cancel()" value="Cancel">
                     </li>
                 </ul>
             </form>
@@ -74,11 +74,12 @@
                         <input type="submit" value="Sign Up">
                     </li>
                     <li class="cancel">
-                        <input class="cancel" type="button" value="Cancel">
+                        <input class="cancel" type="button" onclick="cancel()" value="Cancel">
                     </li>
                 </ul>
             </form>
         </section>
     </section>
+    <script src="js/script-landing.js"></script>
 </body>
 </html>

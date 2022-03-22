@@ -1,3 +1,23 @@
+function newContact() {
+    document.getElementById("newContact").style.display = "block";
+}
+
+function cancel() {
+    document.getElementById("newContact").style.display = "none";
+}
+
+function clearField() {
+    document.getElementById("search").value = "";
+    document.getElementById("firstName").value = "";
+    document.getElementById("lastName").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("number").value = "";
+    document.getElementById("insta").value = "";
+    document.getElementById("twitter").value = "";
+    document.getElementById("birthday").value = "";
+    document.getElementById("notes").value = "";
+}
+
 let contacts = [];
 
 let davidOrtiz = {
