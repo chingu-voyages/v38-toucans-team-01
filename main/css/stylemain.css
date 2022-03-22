@@ -110,6 +110,8 @@ a {
     width: 89.2%;
 }
 
+/* CSS to beautify new contact form */
+
 .form {
 	min-width: fit-content;
     min-height: fit-content;
@@ -216,6 +218,8 @@ a {
 .form .cancel:hover {
     color: #00C4EE;
 }
+
+/* New contact pop up */
 
 #newContact {
     position: absolute;

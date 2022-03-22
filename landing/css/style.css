@@ -45,16 +45,12 @@ button:hover {
 
 .forms {
     display: flex;
-    /* visibility: hidden; */
     justify-content: space-evenly;
     align-items: center;
-    /* position: absolute;
-    left: 0;
-    bottom: 9%;
-    height: 50%;
-    width: 100%; */
     background-color: #D2EAF5;
 }
+
+/* Login and Signup pop-ups */
 
  #login {
     position: absolute;
@@ -76,35 +72,7 @@ button:hover {
     transition: all 2s;
 } 
 
-/* #logo:hover #login {
-    animation: slide-in-left ease 1s forwards;   
-}
-
-@keyframes slide-in-left {
-    from {
-      opacity: 0;
-      transform: translateX(-100px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-#logo:hover #signup{
-    animation: slide-in-right ease 1s forwards;
-}
-
-@keyframes slide-in-right {
-    from {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-} */
+/* CSS to beautify signup and login forms */
 
 .form {
 	max-width:400px;

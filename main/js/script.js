@@ -1,10 +1,16 @@
+//Open New Contact form
+
 function newContact() {
     document.getElementById("newContact").style.display = "block";
 }
 
+//Close New Contact form
+
 function cancel() {
     document.getElementById("newContact").style.display = "none";
 }
+
+//Clear all entry fields on page, set to run on page load via html
 
 function clearField() {
     document.getElementById("search").value = "";
@@ -18,7 +24,7 @@ function clearField() {
     document.getElementById("notes").value = "";
 }
 
-let contacts = [];
+//Manually built contacts/objects to test out functions
 
 let davidOrtiz = {
 
@@ -212,7 +218,9 @@ let adrianBeltre = {
     
 }
 
+//Creates and fills contacts array with manual contacts/objects
 
+let contacts = [];
 
 contacts.push(robinsonCano);
 contacts.push(sammySosa);
@@ -227,7 +235,12 @@ contacts.push(tonyPena);
 contacts.push(albertPujols);
 contacts.push(bartoloColon);
 
+
+//Sets function all() to run on click of filter 
+
 document.getElementById("all").addEventListener("click",all);
+
+//Clears "Contacts" div. Creates div and spans within "Contacts", populated by all contacts in array
 
 function all() {
     document.getElementById("contacts").innerText = "";
@@ -246,7 +259,11 @@ function all() {
     }
 }
 
+//Sets function innerCircle() to run on click of filter 
+
 document.getElementById("inner").addEventListener("click",innerCircle);
+
+//Clears "Contacts" div. Creates div and spans within "Contacts", populated by contacts in array that meet the requirement of being Inner Circle
 
 function innerCircle() {
     document.getElementById("contacts").innerText = "";
@@ -267,7 +284,11 @@ function innerCircle() {
     }
 }
 
+//Sets function outerCircle() to run on click of filter
+
 document.getElementById("outer").addEventListener("click",outerCircle);
+
+//Clears "Contacts" div. Creates div and spans within "Contacts", populated by contacts in array that meet the requirement of being Outer Circle
 
 function outerCircle() {
     document.getElementById("contacts").innerText = "";
@@ -288,7 +309,11 @@ function outerCircle() {
     }
 }
 
+//Sets function network() to run on click of filter
+
 document.getElementById("network").addEventListener("click",network);
+
+//Clears "Contacts" div. Creates div and spans within "Contacts", populated by contacts in array that meet the requirement of being Network
 
 function network() {
     document.getElementById("contacts").innerText = "";
@@ -308,6 +333,10 @@ function network() {
         }
     }
 }
+
+//Sets function search() to run every time a key is released in the Search Bar
+
+//Clears "Contacts" div. Compares Search Bar entry to objects in contacts array, and returns any matches by adding divs/spans to "Contacts" div, as well as the contacts information
 
 document.getElementById("search").addEventListener("keyup", search);
 let param = document.getElementById("search").value;
