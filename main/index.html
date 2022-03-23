@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/f2d99d254a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/stylemain.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Durante</title>
+</head>
+<body onload="clearField(),all()" >
+    <header>
+        <img src="img/durante-logo/vector/default-monochrome.svg" alt="Durante Logo">
+        <a href="https://toucan-landing.netlify.app/" class="contact-nav" id="logout">Log Out</a>
+    </header>
+    <main>
+        <nav>
+            <span onclick="newContact()" class="contact-nav" id="new-contact"><i class="fa-solid fa-user-plus"></i></span>
+            <ul>
+                <li class="contact-nav" id = "all">All</li>
+                <li>|</li>
+                <li class="contact-nav" id = "inner">Inner Circle</li>
+                <li>|</li>
+                <li class="contact-nav" id = "outer">Outer Circle</li>
+                <li>|</li>
+                <li class="contact-nav" id = "network">Network</li>
+            </ul>
+        </nav>
+        <section>
+            <section class="contacts" id = "contacts">
+            </section>
+            <input id="search" type="text" placeholder="Search All...">
+        </section>
+    </main>
+    <section id="newContact">
+        <form class="form">
+            <ul>
+                <li>
+                    <label for="first-name">First Name</label>
+                    <input id="firstName" type="text" placeholder="Robinson" name="first-name">
+                    <span>Enter First Name Here</span>
+                </li>
+                <li>
+                    <label for="last-name">Last Name</label>
+                    <input id="lastName" type="text" placeholder="Cano" name="last-name">
+                    <span>Enter Last Name Here</span>
+                </li>
+                <li>
+                    <label for="email">Email</label>
+                    <input id="email" type="email" placeholder="robinson.cano@gmail.com" name="email">
+                    <span>Enter Email Address Here</span>
+                </li>
+                <li>
+                    <label for="phone-number">Phone Number</label>
+                    <input id="number" type="text" placeholder="(xxx)xxx-xxxx" name="phone-number">
+                    <span>Enter Phone Number Here</span>
+                </li>
+                <li>
+                    <label for="instagram">Instagram</label>
+                    <input id="insta" type="text" placeholder="#robcano" name="instagram">
+                    <span>Enter Instagram Handle Here</span>
+                </li>
+                <li>
+                    <label for="twitter">Twitter</label>
+                    <input id="twitter" type="text" placeholder="#robcano" name="twitter">
+                    <span>Enter Twitter Handle Here</span>
+                </li>
+                <li>
+                    <label for="birthday">Birthday</label>
+                    <input id="birthday" type="text" placeholder="yyyy-mm-dd" name="birthday">
+                    <span>Enter Birthday Here</span>
+                </li>
+                <li>
+                    <label for="notes">Notes</label>
+                    <input id="notes" type="text" placeholder="This guy chews bubble gum and hits home runs" name="notes">
+                    <span>Enter Notes Here</span>
+                </li>
+                <li>
+                    <input type="submit" value="Sign Up">
+                </li>
+                <li class="cancel">
+                    <input class="cancel" type="button" onclick="cancel()" value="Cancel">
+                </li>
+            </ul>
+        </form>
+    </section>
+    <script src="js/script.js"></script> 
+</body>
+</html>

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,15 +14,15 @@
 <body>
     <main>
         <section class="logo" id="logo">
-            <img src="../img/durante-logo/vector/default.svg" alt="Durante Logo">
+            <img src="img/durante-logo/vector/default.svg" alt="Durante Logo">
         </section>
         <section class="login">
-            <button id="logbutton">
+            <button id="logbutton" onclick="login()">
                 <span>
                     Log In
                 </span>
             </button>    
-            <button id="signbutton">
+            <button id="signbutton" onclick="signup()">
                 <span>
                     Sign Up
                 </span>   
@@ -44,10 +44,10 @@
                         <span>Enter Your Password Here</span>
                     </li>
                     <li>
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Log In">
                     </li>
                     <li class="cancel">
-                        <input class="cancel" type="button" value="Cancel">
+                        <input class="cancel" type="button" onclick="cancel()" value="Cancel">
                     </li>
                 </ul>
             </form>
@@ -71,15 +71,15 @@
                         <span>Enter Your Password Here</span>
                     </li>
                     <li>
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Sign Up">
                     </li>
                     <li class="cancel">
-                        <input class="cancel" type="button" value="Cancel">
+                        <input class="cancel" type="button" onclick="cancel()" value="Cancel">
                     </li>
                 </ul>
             </form>
         </section>
     </section>
-    <script src="../js/script.js"></script>
+    <script src="js/script-landing.js"></script>
 </body>
 </html>
