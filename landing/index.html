@@ -61,17 +61,22 @@
                         <span>Enter Your Full Name Here</span>
                     </li> -->
                     <li>
-                        <label for="email">Email</label>
-                        <input type="email" name="email">
+                        <label for="username">Email</label>
+                        <input type="text" id="signin-email" name="username">
                         <span>Enter Your Email Address Here</span>
                     </li>
                     <li>
+                        <label for="avatar">Avatar</label>
+                        <input type="text" id="avatar" name="avatar">
+                        <span>Enter Your Avatar Here</span>
+                    </li>
+                    <li>
                         <label for="password">Password</label>
-                        <input type="password" name="password">
+                        <input type="password" id="signin-password" name="password">
                         <span>Enter Your Password Here</span>
                     </li>
                     <li>
-                        <input type="submit" value="Sign Up">
+                        <input id="signin-btn-submit" type="submit" value="Sign Up">
                     </li>
                     <li class="cancel">
                         <input class="cancel" type="button" onclick="cancel()" value="Cancel">
