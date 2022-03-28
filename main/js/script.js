@@ -242,21 +242,38 @@ document.getElementById("all").addEventListener("click",all);
 
 //Clears "Contacts" div. Creates div and spans within "Contacts", populated by all contacts in array
 
+// function all() {
+//     document.getElementById("contacts").innerText = "";
+//     for(i=0;i<contacts.length;i++) {
+//         contactDiv = document.getElementById("contacts");
+//         contactName = document.createTextNode(`${contacts[i].firstName} ${contacts[i].lastName}`);
+//         phoneNumber = document.createTextNode(`${contacts[i].cellNumber}`)
+//         newDiv = document.createElement("div");
+//         let text = [`${contacts[i].firstName} ${contacts[i].lastName}`, `<i class="fa-solid fa-phone-flip"></i>`, `<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`, `<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`, `<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`, `<i class="fa-solid fa-pencil"></i>`];
+//         contactDiv.appendChild(newDiv);
+//         for(j=0;j<text.length;j++) {
+//             newSpan = document.createElement("span");
+//             newSpan.innerHTML = text[j];
+//             newDiv.appendChild(newSpan);
+//         };
+//     }
+// }
+
 function all() {
     document.getElementById("contacts").innerText = "";
-    for(i=0;i<contacts.length;i++) {
+    contacts.forEach(contact => {
         contactDiv = document.getElementById("contacts");
-        contactName = document.createTextNode(`${contacts[i].firstName} ${contacts[i].lastName}`);
-        phoneNumber = document.createTextNode(`${contacts[i].cellNumber}`)
-        newDiv = document.createElement("div");
-        let text = [`${contacts[i].firstName} ${contacts[i].lastName}`, `<i class="fa-solid fa-phone-flip"></i>`, `<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`, `<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`, `<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`, `<i class="fa-solid fa-pencil"></i>`];
-        contactDiv.appendChild(newDiv);
-        for(j=0;j<text.length;j++) {
-            newSpan = document.createElement("span");
-            newSpan.innerHTML = text[j];
-            newDiv.appendChild(newSpan);
-        };
-    }
+            contactName = document.createTextNode(`${contact.firstName} ${contact.lastName}`);
+            phoneNumber = document.createTextNode(`${contact.cellNumber}`)
+            newDiv = document.createElement("div");
+            let text = [`${contact.firstName} ${contact.lastName}`, `<i class="fa-solid fa-phone-flip"></i>`, `<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`, `<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`, `<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`, `<i class="fa-solid fa-pencil"></i>`];
+            contactDiv.appendChild(newDiv);
+            text.forEach(t => {
+                newSpan = document.createElement("span");
+                newSpan.innerHTML = t;
+                newDiv.appendChild(newSpan);
+            });
+    })
 }
 
 //Sets function innerCircle() to run on click of filter 
