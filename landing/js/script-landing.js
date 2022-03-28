@@ -18,7 +18,7 @@ function signUpUser() {
 
     signUpForm.innerHTML +=
     `
-    <form class='signup-form'> 
+    <form class="form" id='signup-form'> 
         <ul>
             <li>
                 <label for="email">Email</label>
