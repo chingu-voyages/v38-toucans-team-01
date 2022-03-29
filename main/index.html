@@ -11,7 +11,7 @@
 </head>
 <body onload="clearField(),all()" >
     <header>
-        <img src="img/durante-logo/vector/default-monochrome.svg" alt="Durante Logo">
+        <img src="img/durante-logo/vector/default-monochrome.svg" alt="Durante Logo" onclick="getContacts()">
         <a href="https://toucan-landing.netlify.app/" class="contact-nav" id="logout">Log Out</a>
     </header>
     <main>
@@ -21,8 +21,6 @@
                 <li class="contact-nav" id = "all">All</li>
                 <li>|</li>
                 <li class="contact-nav" id = "inner">Inner Circle</li>
-                <li>|</li>
-                <li class="contact-nav" id = "outer">Outer Circle</li>
                 <li>|</li>
                 <li class="contact-nav" id = "network">Network</li>
             </ul>
@@ -69,8 +67,14 @@
                     <label for="notes">Notes</label>
                     <input id="notes" type="text" placeholder="Enter Notes Here" name="notes">
                 </li>
-                <li>
-                    <input type="submit" value="Add Contact" onclick="addContact()">
+                <li id="submitlist">
+                    <input id="submit" type="submit" value="Add Contact" onclick="addContact()">
+                </li>
+                <li id="editlist">
+                    <input id="edit" type="submit" value="Edit">
+                </li>
+                <li id="deletelist">
+                    <input id="delete" type="submit" value="Delete">
                 </li>
                 <li class="cancel">
                     <input class="cancel" type="button" onclick="cancel()" value="Cancel">

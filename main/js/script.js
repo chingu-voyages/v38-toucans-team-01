@@ -11,6 +11,9 @@ let notes = document.getElementById("notes");
 
 function newContact() {
     document.getElementById("newContact").style.display = "block";
+    document.getElementById("submitlist").style.display = "block";
+    document.getElementById("editlist").style.display = "none";
+    document.getElementById("deletelist").style.display = "none";
 }
 
 //Clear all entry fields on page, set to run on page load via html
@@ -61,19 +64,24 @@ function addContact() {
 
 //Retrieve new contact from server
 
-function getUsers() {
+function getContacts() {
+    newContact();
+    document.getElementById("submitlist").style.display = "none";
+    document.getElementById("editlist").style.display = "block";
+    document.getElementById("deletelist").style.display = "block";
     fetch("https://jsonplaceholder.typicode.com/posts")
         .then((res) => res.json())
-        .then((data) => {
-            firstName.value = data.firstName;
-            lastName.value = data.lastName;
-            email.value = data.email;
-            number.value = data.number;
-            insta.value = data.insta;
-            twitter.value = data.twitter;
-            birthday.value = data.birthday;
-            notes.value = data.notes;
-        });
+        .then((data) => console.log(data))
+        // .then((data) => {
+        //     firstName.value = data.firstName;
+        //     lastName.value = data.lastName;
+        //     email.value = data.email;
+        //     number.value = data.number;
+        //     insta.value = data.insta;
+        //     twitter.value = data.twitter;
+        //     birthday.value = data.birthday;
+        //     notes.value = data.notes;
+        // });
 }
 
 //Manually built contacts/objects to test out functions
@@ -301,7 +309,7 @@ function all() {
         contactName = document.createTextNode(`${contacts[i].firstName} ${contacts[i].lastName}`);
         phoneNumber = document.createTextNode(`${contacts[i].cellNumber}`)
         newDiv = document.createElement("div");
-        let text = [`${contacts[i].firstName} ${contacts[i].lastName}`, `<i class="fa-solid fa-phone-flip"></i>`, `<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`, `<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`, `<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`, `<i class="fa-solid fa-pencil"></i>`];
+        let text = [`${contacts[i].firstName} ${contacts[i].lastName}`, `<i class="fa-solid fa-phone-flip"></i>`, `<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`, `<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`, `<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`];
         contactDiv.appendChild(newDiv);
         for(j=0;j<text.length;j++) {
             newSpan = document.createElement("span");
@@ -325,7 +333,7 @@ function innerCircle() {
             contactName = document.createTextNode(`${contacts[i].firstName} ${contacts[i].lastName}`);
             phoneNumber = document.createTextNode(`${contacts[i].cellNumber}`)
             newDiv = document.createElement("div");      
-            let text = [`${contacts[i].firstName} ${contacts[i].lastName}`, `<i class="fa-solid fa-phone-flip"></i>`, `<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`, `<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`, `<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`, `<i class="fa-solid fa-pencil"></i>`];
+            let text = [`${contacts[i].firstName} ${contacts[i].lastName}`, `<i class="fa-solid fa-phone-flip"></i>`, `<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`, `<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`, `<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`];
             contactDiv.appendChild(newDiv);
             for(j=0;j<text.length;j++) {
                 newSpan = document.createElement("span");
@@ -338,28 +346,28 @@ function innerCircle() {
 
 //Sets function outerCircle() to run on click of filter
 
-document.getElementById("outer").addEventListener("click",outerCircle);
+// document.getElementById("outer").addEventListener("click",outerCircle);
 
 //Clears "Contacts" div. Creates div and spans within "Contacts", populated by contacts in array that meet the requirement of being Outer Circle
 
-function outerCircle() {
-    document.getElementById("contacts").innerText = "";
-    for(i=0;i<contacts.length;i++) {
-        if(contacts[i].circle == "Outer Circle") {
-            contactDiv = document.getElementById("contacts");
-            contactName = document.createTextNode(`${contacts[i].firstName} ${contacts[i].lastName}`);
-            phoneNumber = document.createTextNode(`${contacts[i].cellNumber}`)
-            newDiv = document.createElement("div");      
-            let text = [`${contacts[i].firstName} ${contacts[i].lastName}`, `<i class="fa-solid fa-phone-flip"></i>`, `<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`, `<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`, `<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`, `<i class="fa-solid fa-pencil"></i>`];
-            contactDiv.appendChild(newDiv);
-            for(j=0;j<text.length;j++) {
-                newSpan = document.createElement("span");
-                newSpan.innerHTML = text[j];
-                newDiv.appendChild(newSpan);
-            };
-        }
-    }
-}
+// function outerCircle() {
+//     document.getElementById("contacts").innerText = "";
+//     for(i=0;i<contacts.length;i++) {
+//         if(contacts[i].circle == "Outer Circle") {
+//             contactDiv = document.getElementById("contacts");
+//             contactName = document.createTextNode(`${contacts[i].firstName} ${contacts[i].lastName}`);
+//             phoneNumber = document.createTextNode(`${contacts[i].cellNumber}`)
+//             newDiv = document.createElement("div");      
+//             let text = [`${contacts[i].firstName} ${contacts[i].lastName}`, `<i class="fa-solid fa-phone-flip"></i>`, `<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`, `<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`, `<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`, `<i class="fa-solid fa-pencil"></i>`];
+//             contactDiv.appendChild(newDiv);
+//             for(j=0;j<text.length;j++) {
+//                 newSpan = document.createElement("span");
+//                 newSpan.innerHTML = text[j];
+//                 newDiv.appendChild(newSpan);
+//             };
+//         }
+//     }
+// }
 
 //Sets function network() to run on click of filter
 
@@ -375,7 +383,7 @@ function network() {
             contactName = document.createTextNode(`${contacts[i].firstName} ${contacts[i].lastName}`);
             phoneNumber = document.createTextNode(`${contacts[i].cellNumber}`)
             newDiv = document.createElement("div");      
-            let text = [`${contacts[i].firstName} ${contacts[i].lastName}`, `<i class="fa-solid fa-phone-flip"></i>`, `<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`, `<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`, `<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`, `<i class="fa-solid fa-pencil"></i>`];
+            let text = [`${contacts[i].firstName} ${contacts[i].lastName}`, `<i class="fa-solid fa-phone-flip"></i>`, `<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`, `<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`, `<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`];
             contactDiv.appendChild(newDiv);
             for(j=0;j<text.length;j++) {
                 newSpan = document.createElement("span");
@@ -402,7 +410,7 @@ function search() {
             contactName = document.createTextNode(`${contacts[i].firstName} ${contacts[i].lastName}`);
             phoneNumber = document.createTextNode(`${contacts[i].cellNumber}`)
             newDiv = document.createElement("div");      
-            let text = [`${contacts[i].firstName} ${contacts[i].lastName}`, `<i class="fa-solid fa-phone-flip"></i>`, `<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`, `<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`, `<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`, `<i class="fa-solid fa-pencil"></i>`];
+            let text = [`${contacts[i].firstName} ${contacts[i].lastName}`, `<i class="fa-solid fa-phone-flip"></i>`, `<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`, `<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`, `<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`];
             contactDiv.appendChild(newDiv);
             for(j=0;j<text.length;j++) {
                 newSpan = document.createElement("span");
