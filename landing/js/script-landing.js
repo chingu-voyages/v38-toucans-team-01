@@ -43,14 +43,14 @@ function signUpUser() {
 }
 
 function submitSignUpForm(event) {
-    event.preventDefault(); //prevents post request from being submitted
+    event.preventDefault(); 
     let username = document.getElementById("email").value
     let password = document.getElementById("password").value
 
     console.log(username, password)
     
     let newUser = {
-        username: email, 
+        username: username, 
         password: password
     };
 
