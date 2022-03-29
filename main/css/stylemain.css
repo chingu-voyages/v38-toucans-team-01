@@ -24,7 +24,6 @@ header img {
 
 header span {
     color: #022239;
-    align-self: auto;
     font-size: .8rem;
     margin-right: -1rem;
 }
@@ -194,7 +193,6 @@ a {
 .form textarea{
 	resize:none;
 }
-
 
 .form .cancel {
     text-align: center;
