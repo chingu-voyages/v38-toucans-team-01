@@ -194,19 +194,7 @@ a {
 .form textarea{
 	resize:none;
 }
-.form input[type="submit"] {
-	height: 2rem;
-    width: 30%;
-    border: none;
-    color: #022239;
-    background-color: #00C4EE;
-    transition: all 2s;
-    position: relative;
-}
-.form input[type="submit"]:hover {
-	color: #00C4EE;
-    background-color: #022239;
-}
+
 
 .form .cancel {
     text-align: center;

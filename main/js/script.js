@@ -89,6 +89,39 @@ function getContacts() {
         // });
 }
 
+//Edit existing Contact
+
+function editContact() {
+    let first = firstName.value;
+    let last = lastName.value;
+    let address = email.value;
+    let phone = number.value;
+    let gram = insta.value;
+    let tweet = twitter.value;
+    let bday = birthday.value;
+    let info = notes.value;
+
+    fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: 'PUT',
+        headers: {
+            "Accept": "application/json, text/plain, */*",
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({firstName:first,lastName:last, email:address, number:phone, insta:gram, twitter:tweet, birthday:bday, notes:info})
+    })
+    .then ((res) => res.json())
+    .then ((data) => console.log(data))
+    .catch (err => console.error(err))
+}
+
+//Delete existing Contact
+
+function deleteContact() {
+    fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: 'DELETE'
+    })
+}
+
 //Manually built contacts/objects to test out functions
 
 let davidOrtiz = {
