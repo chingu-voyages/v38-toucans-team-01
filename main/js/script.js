@@ -71,7 +71,12 @@ function getContacts() {
     document.getElementById("deletelist").style.display = "block";
     fetch("https://jsonplaceholder.typicode.com/posts")
         .then((res) => res.json())
-        .then((data) => console.log(data))
+        .then((data) => {
+            firstName.value = data[0].userId
+            lastName.value = data[0].userId
+            email.value = data[0].title
+            notes.value = data[0].body
+        });
         // .then((data) => {
         //     firstName.value = data.firstName;
         //     lastName.value = data.lastName;
