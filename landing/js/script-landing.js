@@ -77,6 +77,6 @@ function submitSignUpForm(event) {
     });
     
     // TO CLEAR FORM AFTER SUBMISSION
-    name = document.getElementById("email").value = ""
+    username = document.getElementById("email").value = ""
     password = document.getElementById("password").value = ""  
 }
