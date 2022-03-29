@@ -347,7 +347,7 @@ function all() {
         contactName = document.createTextNode(`${contacts[i].firstName} ${contacts[i].lastName}`);
         phoneNumber = document.createTextNode(`${contacts[i].cellNumber}`)
         newDiv = document.createElement("div");
-        let text = [`${contacts[i].firstName} ${contacts[i].lastName}`, `<i class="fa-solid fa-phone-flip"></i>`, `<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`, `<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`, `<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`];
+        let text = [`${contacts[i].firstName} ${contacts[i].lastName}`, `<a href="tel:6048883662"><i class="fa-solid fa-phone-flip"></i></a>`, `<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`, `<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`, `<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`];
         contactDiv.appendChild(newDiv);
         for(j=0;j<text.length;j++) {
             newSpan = document.createElement("span");
