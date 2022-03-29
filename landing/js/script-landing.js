@@ -44,13 +44,13 @@ function signUpUser() {
 
 function submitSignUpForm(event) {
     event.preventDefault(); //prevents post request from being submitted
-    let name = document.getElementById("email").value
+    let username = document.getElementById("email").value
     let password = document.getElementById("password").value
 
-    console.log(name, password)
+    console.log(username, password)
     
     let newUser = {
-        name: name, 
+        username: email, 
         password: password
     };
 
@@ -77,6 +77,6 @@ function submitSignUpForm(event) {
     });
     
     // TO CLEAR FORM AFTER SUBMISSION
-    name = document.getElementById("name").value = ""
+    name = document.getElementById("email").value = ""
     password = document.getElementById("password").value = ""  
 }
