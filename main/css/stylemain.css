@@ -19,12 +19,11 @@ header img {
     display: block;
     max-height: 100%;
     max-width: 60%;
-    padding: 1%;
+    padding: 1rem 1rem 0 1rem;
 }
 
 header span {
     color: #022239;
-    align-self: center;
     font-size: .8rem;
     margin-right: -1rem;
 }
@@ -38,7 +37,7 @@ main {
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 1.5rem 5% .5rem 5%;
+    padding: 1.5rem 5% 0 5%;
 }
 
 ul {
@@ -66,8 +65,8 @@ ul {
 .contacts {
     border: 2px solid #022239;
     background-color: white;
-    min-height: 415px;
-    max-height: 415px;
+    min-height: 390px;
+    max-height: 390px;
     margin: 0 5%;
     overflow: auto;
 }
@@ -143,7 +142,10 @@ a {
 	margin-bottom: 30px;
 	border-radius: 3px;
 }
-.form li:nth-last-child(2) {
+.form li:nth-last-child(2),
+.form li:nth-last-child(3),
+.form li:nth-last-child(4)
+{
 	border:none;
 	margin-bottom: 0px;
 	text-align: center;
@@ -191,19 +193,6 @@ a {
 .form textarea{
 	resize:none;
 }
-.form input[type="submit"] {
-	height: 2rem;
-    width: 30%;
-    border: none;
-    color: #022239;
-    background-color: #00C4EE;
-    transition: all 2s;
-    position: relative;
-}
-.form input[type="submit"]:hover {
-	color: #00C4EE;
-    background-color: #022239;
-}
 
 .form .cancel {
     text-align: center;
@@ -228,3 +217,41 @@ a {
     height: 100%;
     width: 100%;
 } 
+
+/* Submit, Edit, Delete buttons */
+
+#submitlist {
+    display: block;
+}
+
+#editlist, #deletelist {
+    display: none;
+}
+
+#submit, #edit, #delete {
+    height: 2rem;
+    width: 30%;
+    border: none;
+    color: #022239;
+    background-color: #00C4EE;
+    border:none;
+	margin-bottom: 0px;
+	text-align: center;
+    transition: all 2s;
+    position: relative; 
+}
+
+#submit:hover {
+    color: #00C4EE;
+    background-color: #022239;
+}
+
+#edit:hover {
+    color: #00C4EE;
+    background-color: #022239;
+}
+
+#delete:hover {
+    color: #00C4EE;
+    background-color: #022239;
+}

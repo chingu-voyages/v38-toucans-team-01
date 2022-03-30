@@ -1,27 +1,125 @@
+let firstName = document.getElementById("firstName");
+let lastName = document.getElementById("lastName");
+let email = document.getElementById("email");
+let number = document.getElementById("number");
+let insta = document.getElementById("insta");
+let twitter = document.getElementById("twitter");
+let birthday = document.getElementById("birthday");
+let notes = document.getElementById("notes");
+
 //Open New Contact form
 
 function newContact() {
     document.getElementById("newContact").style.display = "block";
-}
-
-//Close New Contact form
-
-function cancel() {
-    document.getElementById("newContact").style.display = "none";
+    document.getElementById("submitlist").style.display = "block";
+    document.getElementById("editlist").style.display = "none";
+    document.getElementById("deletelist").style.display = "none";
 }
 
 //Clear all entry fields on page, set to run on page load via html
 
 function clearField() {
     document.getElementById("search").value = "";
-    document.getElementById("firstName").value = "";
-    document.getElementById("lastName").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("number").value = "";
-    document.getElementById("insta").value = "";
-    document.getElementById("twitter").value = "";
-    document.getElementById("birthday").value = "";
-    document.getElementById("notes").value = "";
+    firstName.value = "";
+    lastName.value = "";
+    email.value = "";
+    number.value = "";
+    insta.value = "";
+    twitter.value = "";
+    birthday.value = "";
+    notes.value = "";
+}
+
+//Close New Contact form
+
+function cancel() {
+    clearField();
+    document.getElementById("newContact").style.display = "none";
+}
+
+//Enter new contact into server
+
+function addContact() {
+    let first = firstName.value;
+    let last = lastName.value;
+    let address = email.value;
+    let phone = number.value;
+    let gram = insta.value;
+    let tweet = twitter.value;
+    let bday = birthday.value;
+    let info = notes.value;
+
+    fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: 'POST',
+        headers: {
+            "Accept": "application/json, text/plain, */*",
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({firstName:first,lastName:last, email:address, number:phone, insta:gram, twitter:tweet, birthday:bday, notes:info})
+    })
+    .then ((res) => res.json())
+    .then ((data) => console.log(data))
+    .catch (err => console.error(err))
+}
+
+//Retrieve new contact from server
+
+function getContacts() {
+    newContact();
+    document.getElementById("submitlist").style.display = "none";
+    document.getElementById("editlist").style.display = "block";
+    document.getElementById("deletelist").style.display = "block";
+    fetch("https://jsonplaceholder.typicode.com/posts")
+        .then((res) => res.json())
+        .then((data) => {
+            firstName.value = data[0].userId
+            lastName.value = data[0].userId
+            email.value = data[0].title
+            notes.value = data[0].body
+        });
+        // .then((data) => {
+        //     firstName.value = data.firstName;
+        //     lastName.value = data.lastName;
+        //     email.value = data.email;
+        //     number.value = data.number;
+        //     insta.value = data.insta;
+        //     twitter.value = data.twitter;
+        //     birthday.value = data.birthday;
+        //     notes.value = data.notes;
+        // });
+}
+
+//Edit existing Contact
+
+function editContact() {
+    let first = firstName.value;
+    let last = lastName.value;
+    let address = email.value;
+    let phone = number.value;
+    let gram = insta.value;
+    let tweet = twitter.value;
+    let bday = birthday.value;
+    let info = notes.value;
+
+    fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: 'PUT',
+        headers: {
+            "Accept": "application/json, text/plain, */*",
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({firstName:first,lastName:last, email:address, number:phone, insta:gram, twitter:tweet, birthday:bday, notes:info})
+    })
+    .then ((res) => res.json())
+    .then ((data) => console.log(data))
+    .catch (err => console.error(err))
+}
+
+//Delete existing Contact
+
+function deleteContact() {
+    fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: 'DELETE'
+    })
 }
 
 //Manually built contacts/objects to test out functions
@@ -249,7 +347,7 @@ function all() {
         contactName = document.createTextNode(`${contacts[i].firstName} ${contacts[i].lastName}`);
         phoneNumber = document.createTextNode(`${contacts[i].cellNumber}`)
         newDiv = document.createElement("div");
-        let text = [`${contacts[i].firstName} ${contacts[i].lastName}`, `<i class="fa-solid fa-phone-flip"></i>`, `<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`, `<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`, `<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`, `<i class="fa-solid fa-pencil"></i>`];
+        let text = [`${contacts[i].firstName} ${contacts[i].lastName}`, `<a href="tel:6048883662"><i class="fa-solid fa-phone-flip"></i></a>`, `<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`, `<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`, `<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`];
         contactDiv.appendChild(newDiv);
         for(j=0;j<text.length;j++) {
             newSpan = document.createElement("span");
@@ -273,7 +371,7 @@ function innerCircle() {
             contactName = document.createTextNode(`${contacts[i].firstName} ${contacts[i].lastName}`);
             phoneNumber = document.createTextNode(`${contacts[i].cellNumber}`)
             newDiv = document.createElement("div");      
-            let text = [`${contacts[i].firstName} ${contacts[i].lastName}`, `<i class="fa-solid fa-phone-flip"></i>`, `<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`, `<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`, `<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`, `<i class="fa-solid fa-pencil"></i>`];
+            let text = [`${contacts[i].firstName} ${contacts[i].lastName}`, `<i class="fa-solid fa-phone-flip"></i>`, `<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`, `<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`, `<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`];
             contactDiv.appendChild(newDiv);
             for(j=0;j<text.length;j++) {
                 newSpan = document.createElement("span");
@@ -286,28 +384,28 @@ function innerCircle() {
 
 //Sets function outerCircle() to run on click of filter
 
-document.getElementById("outer").addEventListener("click",outerCircle);
+// document.getElementById("outer").addEventListener("click",outerCircle);
 
 //Clears "Contacts" div. Creates div and spans within "Contacts", populated by contacts in array that meet the requirement of being Outer Circle
 
-function outerCircle() {
-    document.getElementById("contacts").innerText = "";
-    for(i=0;i<contacts.length;i++) {
-        if(contacts[i].circle == "Outer Circle") {
-            contactDiv = document.getElementById("contacts");
-            contactName = document.createTextNode(`${contacts[i].firstName} ${contacts[i].lastName}`);
-            phoneNumber = document.createTextNode(`${contacts[i].cellNumber}`)
-            newDiv = document.createElement("div");      
-            let text = [`${contacts[i].firstName} ${contacts[i].lastName}`, `<i class="fa-solid fa-phone-flip"></i>`, `<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`, `<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`, `<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`, `<i class="fa-solid fa-pencil"></i>`];
-            contactDiv.appendChild(newDiv);
-            for(j=0;j<text.length;j++) {
-                newSpan = document.createElement("span");
-                newSpan.innerHTML = text[j];
-                newDiv.appendChild(newSpan);
-            };
-        }
-    }
-}
+// function outerCircle() {
+//     document.getElementById("contacts").innerText = "";
+//     for(i=0;i<contacts.length;i++) {
+//         if(contacts[i].circle == "Outer Circle") {
+//             contactDiv = document.getElementById("contacts");
+//             contactName = document.createTextNode(`${contacts[i].firstName} ${contacts[i].lastName}`);
+//             phoneNumber = document.createTextNode(`${contacts[i].cellNumber}`)
+//             newDiv = document.createElement("div");      
+//             let text = [`${contacts[i].firstName} ${contacts[i].lastName}`, `<i class="fa-solid fa-phone-flip"></i>`, `<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`, `<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`, `<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`, `<i class="fa-solid fa-pencil"></i>`];
+//             contactDiv.appendChild(newDiv);
+//             for(j=0;j<text.length;j++) {
+//                 newSpan = document.createElement("span");
+//                 newSpan.innerHTML = text[j];
+//                 newDiv.appendChild(newSpan);
+//             };
+//         }
+//     }
+// }
 
 //Sets function network() to run on click of filter
 
@@ -323,7 +421,7 @@ function network() {
             contactName = document.createTextNode(`${contacts[i].firstName} ${contacts[i].lastName}`);
             phoneNumber = document.createTextNode(`${contacts[i].cellNumber}`)
             newDiv = document.createElement("div");      
-            let text = [`${contacts[i].firstName} ${contacts[i].lastName}`, `<i class="fa-solid fa-phone-flip"></i>`, `<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`, `<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`, `<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`, `<i class="fa-solid fa-pencil"></i>`];
+            let text = [`${contacts[i].firstName} ${contacts[i].lastName}`, `<i class="fa-solid fa-phone-flip"></i>`, `<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`, `<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`, `<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`];
             contactDiv.appendChild(newDiv);
             for(j=0;j<text.length;j++) {
                 newSpan = document.createElement("span");
@@ -350,7 +448,7 @@ function search() {
             contactName = document.createTextNode(`${contacts[i].firstName} ${contacts[i].lastName}`);
             phoneNumber = document.createTextNode(`${contacts[i].cellNumber}`)
             newDiv = document.createElement("div");      
-            let text = [`${contacts[i].firstName} ${contacts[i].lastName}`, `<i class="fa-solid fa-phone-flip"></i>`, `<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`, `<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`, `<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`, `<i class="fa-solid fa-pencil"></i>`];
+            let text = [`${contacts[i].firstName} ${contacts[i].lastName}`, `<i class="fa-solid fa-phone-flip"></i>`, `<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`, `<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`, `<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`];
             contactDiv.appendChild(newDiv);
             for(j=0;j<text.length;j++) {
                 newSpan = document.createElement("span");
