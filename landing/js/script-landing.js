@@ -55,9 +55,10 @@ function submitSignUpForm(event) {
 
     console.log(username, password)
 
-    let newUser = {
-        username: username, 
-        password: password
+    let newUser = { user: {
+            username: username, 
+            password: password
+        }
     };
 
     // once form submitted => fetch post request to backend
@@ -123,9 +124,10 @@ function submitLogInForm(event) {
 
     console.log(username, password)
 
-    let returnUser = {
-        username: username, 
-        password: password
+    let returnUser = { user: {
+            username: username, 
+            password: password
+        }
     };
 
     // once form submitted => fetch post request to backend
