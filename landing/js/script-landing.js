@@ -52,7 +52,7 @@ function submitSignUpForm(event) {
     let password = document.getElementById("password").value
 
     console.log(username, password)
-    
+
     let newUser = {
         username: username, 
         password: password
@@ -73,6 +73,74 @@ function submitSignUpForm(event) {
     .then(newUser => {
         console.log(newUser);
         if (newUser.error) {
+          alert("Error Password or Username"); /*displays error message*/
+        } 
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+    
+    // TO CLEAR FORM AFTER SUBMISSION
+    username = document.getElementById("email").value = ""
+    password = document.getElementById("password").value = ""  
+}
+
+function logInUser() {
+    let logInForm = document.getElementById("login")
+
+    logInForm.innerHTML +=
+    `
+    <form class="form" id='login-form'> 
+        <ul>
+            <li>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+                <span>Enter Your Email Address Here</span>
+            </li>
+            <li>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
+                <span>Enter Your Password Here</span>
+            </li>
+            <li>
+                <input type="submit" value="Log In">
+            </li>
+            <li class="cancel">
+                <input class="cancel" type="button" onclick="cancel()" value="Cancel">
+            </li>
+        </ul>
+    </form>
+    `
+    logInForm.addEventListener("submit", submitLogInForm)
+}
+
+function submitLogInForm(event) {
+    event.preventDefault(); 
+    let username = document.getElementById("email").value
+    let password = document.getElementById("password").value
+
+    console.log(username, password)
+
+    let returnUser = {
+        username: username, 
+        password: password
+    };
+
+    // once form submitted => fetch post request to backend
+    fetch('http://localhost:3000/api/v1/login', { 
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(returnUser) //converts javascript objects into strings.
+        
+    
+    }) //consuming code: waiting on promise to be fulfilled
+    .then(response => response.json())
+    .then(returnUser => {
+        // console.log(returnUser);
+        if (returnUser.error) {
           alert("Error Password or Username"); /*displays error message*/
         } 
     })
