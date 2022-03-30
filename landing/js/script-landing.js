@@ -1,4 +1,6 @@
 //Bring up Login or Signup form while removing the other
+signUpUser()
+logInUser()
 
 function login() {
     document.getElementById("signup").style.display = "none";
