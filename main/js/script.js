@@ -386,7 +386,7 @@ function all() {
         };
     }
 
-}
+
 
 //Sets function innerCircle() to run on click of filter 
 
