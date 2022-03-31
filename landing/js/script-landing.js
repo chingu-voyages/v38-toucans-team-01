@@ -76,6 +76,7 @@ function submitSignUpForm(event) {
     .then(data => {
         console.log(data);
         localStorage.setItem('user', data.jwt);
+        window.location.href="/main/index.html";
         if (data.error) {
           alert("Error Password or Username"); /*displays error message*/
         } 
@@ -146,6 +147,7 @@ function submitLogInForm(event) {
     .then(userData => {
          console.log(userData);
          localStorage.setItem('user', userData.jwt);
+         window.location.href="/main/index.html";
         if (userData.error) {
           alert("Error Password or Username"); /*displays error message*/
         } 
