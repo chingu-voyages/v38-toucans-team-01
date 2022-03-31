@@ -73,9 +73,10 @@ function submitSignUpForm(event) {
     
     }) //consuming code: waiting on promise to be fulfilled
     .then(response => response.json())
-    .then(newUser => {
-        console.log(newUser);
-        if (newUser.error) {
+    .then(data => {
+        console.log(data);
+        
+        if (data.error) {
           alert("Error Password or Username"); /*displays error message*/
         } 
     })
@@ -142,9 +143,10 @@ function submitLogInForm(event) {
     
     }) //consuming code: waiting on promise to be fulfilled
     .then(response => response.json())
-    .then(returnUser => {
-        // console.log(returnUser);
-        if (returnUser.error) {
+    .then(userData => {
+         console.log(userData);
+         localStorage.setItem('user', userData.jwt);
+        if (userData.error) {
           alert("Error Password or Username"); /*displays error message*/
         } 
     })
