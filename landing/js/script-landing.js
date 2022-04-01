@@ -1,6 +1,8 @@
-//Bring up Login or Signup form while removing the other
+// Invoke user forms for code execution
 signUpUser()
 logInUser()
+
+//Bring up Login or Signup form while removing the other
 
 function login() {
     document.getElementById("signup").style.display = "none";
