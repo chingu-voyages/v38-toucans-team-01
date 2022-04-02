@@ -30,12 +30,12 @@ function signUpUser() {
         <ul>
             <li>
                 <label for="email">Email</label>
-                <input type="text" id="signUpEmail" name="email">
+                <input type="email" id="email" name="email">
                 <span>Enter Your Email Address Here</span>
             </li>
             <li>
                 <label for="password">Password</label>
-                <input type="password" id="signUpPassword" name="password">
+                <input type="password" id="password" name="password">
                 <span>Enter Your Password Here</span>
             </li>
             <li>
@@ -52,14 +52,14 @@ function signUpUser() {
 
 function submitSignUpForm(event) {
     event.preventDefault(); 
-    let usernameSignUp = document.getElementById("signUpEmail").value
-    let passwordSignUp = document.getElementById("signUpPassword").value
+    let username = document.getElementById("email").value
+    let password = document.getElementById("password").value
 
-    console.log(usernameSignUp, passwordSignUp)
+    console.log(username, password)
 
     let newUser = { user: {
-            username: usernameSignUp, 
-            password: passwordSignUp
+            username: username, 
+            password: password
         }
     };
 
@@ -75,11 +75,9 @@ function submitSignUpForm(event) {
     
     }) //consuming code: waiting on promise to be fulfilled
     .then(response => response.json())
-    .then(data => {
-        console.log(data);
-        localStorage.setItem('user', data.jwt);
-        window.location.href="/main/index.html";
-        if (data.error) {
+    .then(newUser => {
+        console.log(newUser);
+        if (newUser.error) {
           alert("Error Password or Username"); /*displays error message*/
         } 
     })
@@ -101,7 +99,7 @@ function logInUser() {
         <ul>
             <li>
                 <label for="email">Email</label>
-                <input type="text" id="email" name="email">
+                <input type="email" id="email" name="email">
                 <span>Enter Your Email Address Here</span>
             </li>
             <li>
@@ -120,7 +118,7 @@ function logInUser() {
     `
     logInForm.addEventListener("submit", submitLogInForm)
 }
- 
+
 function submitLogInForm(event) {
     event.preventDefault(); 
     let username = document.getElementById("email").value
@@ -146,11 +144,9 @@ function submitLogInForm(event) {
     
     }) //consuming code: waiting on promise to be fulfilled
     .then(response => response.json())
-    .then(userData => {
-         console.log(userData);
-         localStorage.setItem('user', userData.jwt);
-         window.location.href="/main/index.html";
-        if (userData.error) {
+    .then(returnUser => {
+        // console.log(returnUser);
+        if (returnUser.error) {
           alert("Error Password or Username"); /*displays error message*/
         } 
     })
