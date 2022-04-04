@@ -9,7 +9,7 @@
 
 ## Overview
 (client side repo) 
-([server side repo:](https://github.com/chingu-voyages/v38-toucans-team-01be))
+([server side repo](https://github.com/chingu-voyages/v38-toucans-team-01be))
 
 description of frontend here
 
@@ -29,7 +29,7 @@ description of frontend here
 3. 
 
 ## Dependencies
-
+* [Font Awesome](https://fontawesome.com/)
 
 
 ## Contributors
