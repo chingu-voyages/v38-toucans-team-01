@@ -35,6 +35,7 @@ Durante is a phone book web app ideal for students and working professionals. Yo
 * [Luke Houlihan](https://github.com/HouliHeeler)
 * [Luis Castillo](https://github.com/LuisCastilloKC) 
 * [Ifeoluwa Akinremi-Wade](https://github.com/IfeAkiWad)
+* [Yasmin Abdussalam](https://www.linkedin.com/in/yabdussalam/)
 * [Jim Medlock](https://github.com/jdmedlock)
 
 ## License
