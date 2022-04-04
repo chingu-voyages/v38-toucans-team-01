@@ -13,21 +13,6 @@
 
 description of frontend here
 
-## Installation
-
-1. 
-
-    
-
-    Run in the terminal:
-
-    ```bash
-    ```
-
-2. 
-
-3. 
-
 ## Dependencies
 * [Font Awesome](https://fontawesome.com/)
 
