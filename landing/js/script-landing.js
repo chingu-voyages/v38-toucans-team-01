@@ -59,7 +59,7 @@ function submitSignUpForm(event) {
     };
 
     // once form submitted => fetch post request to backend
-    fetch('http://localhost:3000/api/v1/users', { 
+    fetch('http://localhost:3000/api/v1/login', { 
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
