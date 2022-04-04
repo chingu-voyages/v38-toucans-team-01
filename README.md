@@ -14,13 +14,16 @@ Durante is a phone book app ideal for students and working professionals. You ca
 - [x] A form to store a new contact
 - [x] Responsive design
 
-
-
 #### LIVE LINK
 
 
+
 ## Overview
-(client side repo) 
+
+(client side repo)
+* client side is built using vanilla Javascript 
+* User data is persisted using Javascript Fetch requests
+
 ([server side repo](https://github.com/chingu-voyages/v38-toucans-team-01be))
 
 description of frontend here
