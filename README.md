@@ -27,8 +27,6 @@ Durante is a phone book app ideal for students and working professionals. You ca
 
 ([server side repo](https://github.com/chingu-voyages/v38-toucans-team-01be))
 
-description of frontend here
-
 ## Dependencies
 * [Font Awesome](https://fontawesome.com/)
 
