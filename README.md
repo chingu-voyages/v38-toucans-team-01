@@ -2,7 +2,7 @@
 
 ## About
 
-Durante is a phone book app ideal for students and working professionals. You can access, store and update your contacts from any device by just logging in to your account. 
+Durante is a phone book web app ideal for students and working professionals. You can access, store and update your contacts from any device by just logging in to your account. 
 
 ### Features
 
