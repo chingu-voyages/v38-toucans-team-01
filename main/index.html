@@ -4,6 +4,7 @@
     <script src="https://kit.fontawesome.com/f2d99d254a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/stylemain.css">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
 </head>
 <body onload="clearField(),all()" >
     <header>
-        <img src="img/durante-logo/vector/default-monochrome.svg" alt="Durante Logo">
+        <img src="img/durante-logo/vector/default-monochrome.svg" alt="Durante Logo" onclick="getContacts()">
         <a href="https://toucan-landing.netlify.app/" class="contact-nav" id="logout">Log Out</a>
     </header>
     <main>
@@ -20,9 +21,7 @@
             <ul>
                 <li class="contact-nav" id = "all">All</li>
                 <li>|</li>
-                <li class="contact-nav" id = "inner">Inner Circle</li>
-                <li>|</li>
-                <li class="contact-nav" id = "outer">Outer Circle</li>
+                <li class="contact-nav" id = "inner">Favourites</li>
                 <li>|</li>
                 <li class="contact-nav" id = "network">Network</li>
             </ul>
@@ -57,11 +56,6 @@
                     <input id="insta" type="text" placeholder="Enter Instagram Handle Here" name="instagram">
                 </li>
                 <li>
-                    <label for="facebook">Facebook</label>
-                    <input id="fb" type="text" placeholder="facebook.com/robinsoncano" name="facebook">
-                    <span>Enter Facebook Page Here</span>
-                </li>
-                <li>
                     <label for="twitter">Twitter</label>
                     <input id="twitter" type="text" placeholder="Enter Twitter Handle Here" name="twitter">
                 </li>
@@ -74,8 +68,14 @@
                     <label for="notes">Notes</label>
                     <input id="notes" type="text" placeholder="Enter Notes Here" name="notes">
                 </li>
-                <li>
-                    <input type="submit" value="Add Contact">
+                <li id="submitlist">
+                    <input id="submit" type="submit" value="Add Contact" onsubmit="addContact();return false">
+                </li>
+                <li id="editlist">
+                    <input id="edit" type="submit" value="Edit" onsubmit="editContact();return false">
+                </li>
+                <li id="deletelist">
+                    <input id="delete" type="submit" value="Delete" onsubmit="deleteContact();return false">
                 </li>
                 <li class="cancel">
                     <input class="cancel" type="button" onclick="cancel()" value="Cancel">
