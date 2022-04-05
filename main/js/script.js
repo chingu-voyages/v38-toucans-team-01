@@ -40,6 +40,10 @@ function cancel() {
 //Enter new contact into server
 
 function addContact() {
+    console.log("starting function");
+
+    
+
     let first = firstName.value;
     let last = lastName.value;
     let address = email.value;
@@ -49,16 +53,30 @@ function addContact() {
     let bday = birthday.value;
     let info = notes.value;
 
-    fetch("https://jsonplaceholder.typicode.com/posts", {
+    let contactAdd = {contact: {
+        firstName: first,
+        lastName: last,
+        email: address,
+        number: phone,
+        insta: gram,
+        twitter: tweet,
+        birthday: bday,
+        info: notes,
+        }
+    };
+
+    console.log(contactAdd);
+
+    fetch("127.0.0.1:3000/api/v1/contacts", {
         method: 'POST',
         headers: {
             "Accept": "application/json, text/plain, */*",
             "Content-type": "application/json"
         },
-        body: JSON.stringify({firstName:first,lastName:last, email:address, number:phone, insta:gram, twitter:tweet, birthday:bday, notes:info})
+        body: JSON.stringify(contactAdd)
     })
     .then ((res) => res.json())
-    .then ((data) => console.log(data))
+    .then ((contactData) => console.log(contactData))
     .catch (err => console.error(err))
 }
 
@@ -69,13 +87,13 @@ function getContacts() {
     document.getElementById("submitlist").style.display = "none";
     document.getElementById("editlist").style.display = "block";
     document.getElementById("deletelist").style.display = "block";
-    fetch("https://jsonplaceholder.typicode.com/posts")
+    fetch("127.0.0.1:3000/api/v1/contacts")
         .then((res) => res.json())
         .then((data) => {
-            firstName.value = data[0].userId
-            lastName.value = data[0].userId
-            email.value = data[0].title
-            notes.value = data[0].body
+            firstName.value = contact[0].firstName
+            lastName.value = contact[0].lastName
+            email.value = contact[0].email
+            notes.value = contact[0].notes
         });
         // .then((data) => {
         //     firstName.value = data.firstName;
@@ -101,7 +119,7 @@ function editContact() {
     let bday = birthday.value;
     let info = notes.value;
 
-    fetch("https://jsonplaceholder.typicode.com/posts", {
+    fetch("127.0.0.1:3000/api/v1/contacts", {
         method: 'PUT',
         headers: {
             "Accept": "application/json, text/plain, */*",
@@ -117,7 +135,7 @@ function editContact() {
 //Delete existing Contact
 
 function deleteContact() {
-    fetch("https://jsonplaceholder.typicode.com/posts", {
+    fetch("127.0.0.1:3000/api/v1/contacts", {
         method: 'DELETE'
     })
 }
