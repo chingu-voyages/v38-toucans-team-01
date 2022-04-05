@@ -1,3 +1,5 @@
+let favorite = document.getElementById("favorite");
+let profNetwork = document.getElementById("profNetwork");
 let firstName = document.getElementById("firstName");
 let lastName = document.getElementById("lastName");
 let email = document.getElementById("email");
@@ -20,6 +22,8 @@ function newContact() {
 
 function clearField() {
     document.getElementById("search").value = "";
+    favorite.checked = false;
+    profNetwork.checked = false;
     firstName.value = "";
     lastName.value = "";
     email.value = "";

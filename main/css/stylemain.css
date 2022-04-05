@@ -1,3 +1,20 @@
+@media only screen and (max-device-width: 480px) {
+    html, body {
+        font-size: small;
+    }
+    #contacts {
+        min-height: 65vh;
+        max-height: 65vh;
+    }
+    #logout {
+        font-size: smaller;
+    }
+    body {
+        max-width: 98%;
+        max-height: 98%;
+    }
+}
+
 html, body {
     font-family: 'Roboto Slab', serif;
     height: 100%;
@@ -65,8 +82,8 @@ ul {
 .contacts {
     border: 2px solid #022239;
     background-color: white;
-    min-height: 390px;
-    max-height: 390px;
+    min-height: 26rem;
+    max-height: 26rem;
     margin: 0 5%;
     overflow: auto;
 }
