@@ -96,7 +96,7 @@ div {
     min-height: 2rem;
     align-items: center;
     margin: 2px;
-    gap: 2rem;
+    gap: 1rem;
     transition: all .2s;
 }
 
@@ -107,6 +107,7 @@ div:hover {
 
 div span {
     color: #022239;
+    min-width: 1.5rem;
     cursor: default;
 }
 

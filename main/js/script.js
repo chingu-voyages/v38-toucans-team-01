@@ -126,19 +126,24 @@ function all() {
                 let text = [`<a href="#" onclick="getContacts(); return false;">${post.id} ${post.id}</a>`];
                 if(post.id%3 == 0) {
                     text.push(`<i class="fa-solid fa-phone-flip"></i>`)
-                }
+                }else
+                    text.push(" ")
                 if(post.id%4 == 0) { 
                     text.push(`<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`)
-                }
+                }else
+                text.push(" ")
                 if(post.id%12 == 0) { 
                     text.push(`<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`)
-                }
+                }else
+                text.push(" ")
                 if(post.id%8 == 0) { 
                     text.push(`<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`)
-                }
+                }else
+                text.push(" ")
                 if(post.id%2 == 0) { 
                     text.push(`<a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>`)
-                }
+                }else
+                text.push(" ")
                 
                 text.forEach(t => {
                     newSpan = document.createElement("span");
@@ -166,19 +171,24 @@ function favorites() {
                     let text = [`<a href="#" onclick="getContacts(); return false;">${post.id} ${post.id}</a>`];
                     if(post.id%3 == 0) {
                         text.push(`<i class="fa-solid fa-phone-flip"></i>`)
-                    }
+                    } else
+                    text.push(" ")
                     if(post.id%4 == 0) { 
                         text.push(`<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`)
-                    }
+                    }else
+                    text.push(" ")
                     if(post.id%12 == 0) { 
                         text.push(`<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`)
-                    }
+                    }else
+                    text.push(" ")
                     if(post.id%8 == 0) { 
                         text.push(`<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`)
-                    }
+                    }else
+                    text.push(" ")
                     if(post.id%2 == 0) { 
                         text.push(`<a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>`)
-                    }
+                    }else
+                    text.push(" ")
 
                     text.forEach(t => {
                         newSpan = document.createElement("span");
@@ -206,19 +216,24 @@ function network() {
                     let text = [`<a href="#" onclick="getContacts(); return false;">${post.id} ${post.id}</a>`];
                     if(post.id%3 == 0) {
                         text.push(`<i class="fa-solid fa-phone-flip"></i>`)
-                    }
+                    }else
+                    text.push(" ")
                     if(post.id%4 == 0) { 
                         text.push(`<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`)
-                    }
+                    }else
+                    text.push(" ")
                     if(post.id%12 == 0) { 
                         text.push(`<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`)
-                    }
+                    }else
+                    text.push(" ")
                     if(post.id%8 == 0) { 
                         text.push(`<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`)
-                    }
+                    }else
+                    text.push(" ")
                     if(post.id%2 == 0) { 
                         text.push(`<a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>`)
-                    }
+                    }else
+                    text.push(" ")
 
                     text.forEach(t => {
                         newSpan = document.createElement("span");
@@ -251,19 +266,24 @@ function search() {
                     let text = [`<a href="#" onclick="getContacts(); return false;">${post.id} ${post.id}</a>`];
                     if(post.id%3 == 0) {
                         text.push(`<i class="fa-solid fa-phone-flip"></i>`)
-                    }
+                    }else
+                    text.push(" ")
                     if(post.id%4 == 0) { 
                         text.push(`<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`)
-                    }
+                    }else
+                    text.push(" ")
                     if(post.id%12 == 0) { 
                         text.push(`<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`)
-                    }
+                    }else
+                    text.push(" ")
                     if(post.id%8 == 0) { 
                         text.push(`<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`)
-                    }
+                    }else
+                    text.push(" ")
                     if(post.id%2 == 0) { 
                         text.push(`<a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>`)
-                    }
+                    }else
+                    text.push(" ")
 
                     text.forEach(t => {
                         newSpan = document.createElement("span");
