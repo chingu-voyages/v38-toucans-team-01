@@ -123,7 +123,7 @@ function all() {
                 contactDiv = document.getElementById("contacts");
                 newDiv = document.createElement("div");
                 contactDiv.appendChild(newDiv);
-                let text = [`${post.id} ${post.id}`];
+                let text = [`<a href="#" onclick="getContacts(); return false;">${post.id} ${post.id}</a>`];
                 if(post.id%3 == 0) {
                     text.push(`<i class="fa-solid fa-phone-flip"></i>`)
                 }
@@ -163,7 +163,7 @@ function favorites() {
                     contactDiv = document.getElementById("contacts");
                     newDiv = document.createElement("div");
                     contactDiv.appendChild(newDiv);
-                    let text = [`${post.id} ${post.id}`];
+                    let text = [`<a href="#" onclick="getContacts(); return false;">${post.id} ${post.id}</a>`];
                     if(post.id%3 == 0) {
                         text.push(`<i class="fa-solid fa-phone-flip"></i>`)
                     }
@@ -203,7 +203,7 @@ function network() {
                     contactDiv = document.getElementById("contacts");
                     newDiv = document.createElement("div");
                     contactDiv.appendChild(newDiv);
-                    let text = [`${post.id} ${post.id}`];
+                    let text = [`<a href="#" onclick="getContacts(); return false;">${post.id} ${post.id}</a>`];
                     if(post.id%3 == 0) {
                         text.push(`<i class="fa-solid fa-phone-flip"></i>`)
                     }
@@ -248,7 +248,7 @@ function search() {
                     contactDiv = document.getElementById("contacts");
                     newDiv = document.createElement("div");
                     contactDiv.appendChild(newDiv);
-                    let text = [`${post.id} ${post.id}`];
+                    let text = [`<a href="#" onclick="getContacts(); return false;">${post.id} ${post.id}</a>`];
                     if(post.id%3 == 0) {
                         text.push(`<i class="fa-solid fa-phone-flip"></i>`)
                     }
