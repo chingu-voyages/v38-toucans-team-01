@@ -1,3 +1,22 @@
+@media only screen and (max-device-width: 480px) {
+    #logo {
+        margin: 5% auto 0 auto;
+        height: 35%;
+        min-height: 35%;
+        max-height: 35%;
+    }
+    main section img {
+        padding-top: 2.5rem;
+    }
+    #slogan {
+        font-size: smaller;
+    }
+    #login, #signup {
+        min-width: 85vw;
+        align-self: center;
+    }
+}    
+
 html, body, main{
     background-color: #D2EAF5;
     font-family: 'Roboto Slab', serif;
@@ -28,7 +47,7 @@ main section {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 5%;
+    margin: 5%;
     height: 40%;
     min-height: 40%;
     max-height: 40%;
