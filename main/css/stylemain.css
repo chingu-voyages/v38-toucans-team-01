@@ -82,8 +82,8 @@ ul {
 .contacts {
     border: 2px solid #022239;
     background-color: white;
-    min-height: 26rem;
-    max-height: 26rem;
+    min-height: 24rem;
+    max-height: 24rem;
     margin: 0 5%;
     overflow: auto;
 }
