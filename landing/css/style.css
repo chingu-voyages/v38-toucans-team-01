@@ -210,3 +210,34 @@ button:hover {
 .form .cancel:hover {
     color: #00C4EE;
 }
+
+
+/*CSS Animations*/
+
+.fadeIn {
+    animation: 3s fadeIn;
+}
+
+#logo, #logbutton, #signbutton {
+    animation-delay: .5s;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+}
+
+#logbutton {
+    animation-delay: 1.5s;
+}
+
+#signbutton {
+    animation-delay: 2.5s;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      visibility: visible;
+      opacity: 1;
+    }
+}
