@@ -1,3 +1,6 @@
+// addContact()
+
+
 let firstName = document.getElementById("firstName");
 let lastName = document.getElementById("lastName");
 let email = document.getElementById("email");
@@ -29,6 +32,7 @@ function clearField() {
     birthday.value = "";
     notes.value = "";
 }
+
 
 //Close New Contact form
 

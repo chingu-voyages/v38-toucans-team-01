@@ -15,9 +15,6 @@ Durante is a phone book web app ideal for students and working professionals. Yo
 
 #### LIVE LINK
 
-## Usage
-
-
 ## Overview
 
 (client side repo)
