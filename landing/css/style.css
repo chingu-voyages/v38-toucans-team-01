@@ -1,4 +1,21 @@
+@media only screen and (max-device-width: 480px) {
+    #logo {
+        margin: 0 auto 0 auto;
+    }
+    main section img {
+        margin-top: 4rem;
+    }
+    #slogan {
+        font-size: smaller;
+    }
+    #login, #signup {
+        min-width: 85vw;
+        align-self: center;
+    }
+}    
+
 html, body, main{
+    background-color: #D2EAF5;
     font-family: 'Roboto Slab', serif;
     height: 100%;
     min-height: 100%;
@@ -7,7 +24,6 @@ html, body, main{
 main {
     display: flex;
     flex-direction: column;
-    background-color: #D2EAF5;
 }
 
 main section {
@@ -23,8 +39,25 @@ main section {
     justify-content: space-evenly;
 }
 
+#logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 40%;
+    min-height: 40%;
+    max-height: 40%;
+}
+
 main section img {
-    max-height: 200%;
+    padding-top: 5%;
+    max-height: 55%;
+}
+
+#slogan {
+    color: #022239;
+    font-weight: 700;
+    padding-top: 5%;
 }
 
 button {
@@ -33,7 +66,7 @@ button {
     border: none;
     color: #022239;
     background-color: #00C4EE;
-    transition: all 2s;
+    transition: all 1s;
     position: relative;
 }
 
@@ -56,27 +89,27 @@ button:hover {
     position: absolute;
     display: none;
     left: 8%;
-    top: 38%;
-    height: 30%;
+    top: 35%;
+    height: 25%;
     width: 40%;
-    transition: all 2s;
+    transition: all 1s;
 }
 
 #signup {
     position: absolute;
     display: none;
     right: 8%;
-    top: 38%;
-    height: 30%;
+    top: 35%;
+    height: 25%;
     width: 40%;
-    transition: all 2s;
+    transition: all 1s;
 } 
 
 /* CSS to beautify signup and login forms */
 
 .form {
 	max-width:400px;
-	margin:50px auto;
+	margin:50px auto 0 auto;
 	background:#fff;
 	border-radius:2px;
 	padding:20px;
@@ -156,7 +189,7 @@ button:hover {
     border: none;
     color: #022239;
     background-color: #00C4EE;
-    transition: all 2s;
+    transition: all 1s;
     position: relative;
 }
 .form input[type="submit"]:hover {
@@ -171,7 +204,7 @@ button:hover {
     border: none;
     padding: 0;
     outline: inherit;
-    transition: all 2s;
+    transition: all 1s;
 }
 
 .form .cancel:hover {
