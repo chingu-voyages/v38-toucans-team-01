@@ -12,7 +12,7 @@
 </head>
 <body onload="clearField(),all()" >
     <header>
-        <img src="img/durante-logo/vector/default-monochrome.svg" alt="Durante Logo" onclick="getContacts()">
+        <img src="img/durante-logo/vector/default-monochrome.svg" alt="Durante Logo">
         <a href="https://toucan-landing.netlify.app/" class="contact-nav" id="logout">Log Out</a>
     </header>
     <main>
@@ -21,7 +21,7 @@
             <ul>
                 <li class="contact-nav" id = "all">All</li>
                 <li>|</li>
-                <li class="contact-nav" id = "inner">Favourites</li>
+                <li class="contact-nav" id = "favorites">Favorites</li>
                 <li>|</li>
                 <li class="contact-nav" id = "network">Network</li>
             </ul>
@@ -35,6 +35,22 @@
     <section id="newContact">
         <form class="form">
             <ul>
+                <li id="toggles">
+                    <div class="toggles">
+                        <label class="toggle-control">
+                            <input id="favorite" type="checkbox" checked="checked">
+                            <span class="control"></span>
+                        </label>
+                        <span>Favorite</span>
+                    </div>
+                    <div class="toggles">
+                        <label class="toggle-control">
+                            <input id="profNetwork" type="checkbox" checked="checked">
+                            <span class="control"></span>
+                        </label>
+                        <span>Network</span>
+                    </div>
+                </li>
                 <li>
                     <label for="first-name">First Name</label>
                     <input id="firstName" type="text" placeholder="Enter First Name Here" name="first-name">
@@ -52,6 +68,10 @@
                     <input id="number" type="text" placeholder="Enter Phone Number Here" name="phone-number">
                 </li>
                 <li>
+                    <label for="linkedin">LinkedIn</label>
+                    <input id="linkedin" type="text" placeholder="Enter LinkedIn Here" name="linkedin">
+                </li>
+                <li>
                     <label for="instagram">Instagram</label>
                     <input id="insta" type="text" placeholder="Enter Instagram Handle Here" name="instagram">
                 </li>
@@ -62,7 +82,6 @@
                 <li>
                     <label for="birthday">Birthday</label>
                     <input id="birthday" type="text" placeholder="yyyy-mm-dd" name="birthday">
-                    <!-- <span>Enter Birthday Here</span> -->
                 </li>
                 <li>
                     <label for="notes">Notes</label>
