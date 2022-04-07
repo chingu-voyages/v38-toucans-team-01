@@ -85,30 +85,20 @@ button:hover {
 
 /* Login and Signup pop-ups */
 
- #login {
+ #login, #signup {
     position: absolute;
     display: none;
-    left: 8%;
+    align-self: center;
     top: 35%;
     height: 25%;
-    width: 40%;
+    min-width: 60vw;
     transition: all 1s;
 }
-
-#signup {
-    position: absolute;
-    display: none;
-    right: 8%;
-    top: 35%;
-    height: 25%;
-    width: 40%;
-    transition: all 1s;
-} 
 
 /* CSS to beautify signup and login forms */
 
 .form {
-	max-width:400px;
+	max-width:85vw;
 	margin:50px auto 0 auto;
 	background:#fff;
 	border-radius:2px;
