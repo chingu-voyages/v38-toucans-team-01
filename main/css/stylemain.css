@@ -142,9 +142,9 @@ a {
 
 .toggles {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    gap: 1rem;
+    width: 120px;
     background-color: #fff;
     border: 1px #DDDDDD solid;
     border-radius: 25px;
@@ -153,6 +153,7 @@ a {
 
 .toggles > span {
     color: #5C5C5C;
+    margin-left: -3rem;
 }
 
 .toggles:hover {
@@ -163,7 +164,6 @@ a {
 .toggle-control {
     display: block;
     position: relative;
-    padding-left: 40px;
     margin-bottom: 18px;
     cursor: pointer;
     font-size: 1rem;

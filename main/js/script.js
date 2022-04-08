@@ -44,46 +44,100 @@ function cancel() {
 
 //Enter new contact into server
 
-function addContact() {
-    console.log("starting function");
+const renderContacts = (contacts) => {
+    contacts.forEach(contact =>{
+    contactOutPut += `
+    <div>${contact.firstname} ${contact.lastname}</div> 
+    `;
+    })
+    contactList.innerHTML = contactOutPut
+    
+    }
+    
+    fetch('http://localhost:3000/api/v1/contacts', {
+    headers:{
+    Authorization: `Bearer ${localStorage.getItem('user')}`
+    }
+    })
+    .then(res => res.json())
+    .then(data => {
+    renderContacts(data)
+    
+    }
+    ) 
+
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    
+    
+    fetch('http://localhost:3000/api/v1/contacts',{
+    method: 'POST',
+    headers:{
+    'content-Type': 'application/json',
+    Authorization: `Bearer ${localStorage.getItem('user')}`
+    },
+    body: JSON.stringify({
+    firstname: firstName.value,
+    lastname: lastName.value,
+    phonenumber: number.value,
+    birthday: birthday.value,
+    email: email.value,
+    notes: notes.value,
+    instagram: insta.value,
+    facebook: facebook.value,
+    twitter: twitter.value
+    
+    }) 
+    })
+    .then(res => res.json())
+    .then(data => {
+    const dataArr = [];
+    dataArr.push(data);
+    renderContacts(dataArr)
+    window.location.href="/main/index.html";
+    })
+    }) 
+
+// function addContact() {
+//     console.log("starting function");
 
     
 
-    let first = firstName.value;
-    let last = lastName.value;
-    let address = email.value;
-    let phone = number.value;
-    let gram = insta.value;
-    let tweet = twitter.value;
-    let bday = birthday.value;
-    let info = notes.value;
+//     let first = firstName.value;
+//     let last = lastName.value;
+//     let address = email.value;
+//     let phone = number.value;
+//     let gram = insta.value;
+//     let tweet = twitter.value;
+//     let bday = birthday.value;
+//     let info = notes.value;
 
-    let contactAdd = {contact: {
-        firstName: first,
-        lastName: last,
-        email: address,
-        number: phone,
-        insta: gram,
-        twitter: tweet,
-        birthday: bday,
-        info: notes,
-        }
-    };
+//     let contactAdd = {contact: {
+//         firstName: first,
+//         lastName: last,
+//         email: address,
+//         number: phone,
+//         insta: gram,
+//         twitter: tweet,
+//         birthday: bday,
+//         info: notes,
+//         }
+//     };
 
-    console.log(contactAdd);
+//     console.log(contactAdd);
 
-    fetch("127.0.0.1:3000/api/v1/contacts", {
-        method: 'POST',
-        headers: {
-            "Accept": "application/json, text/plain, */*",
-            "Content-type": "application/json"
-        },
-        body: JSON.stringify(contactAdd)
-    })
-    .then ((res) => res.json())
-    .then ((contactData) => console.log(contactData))
-    .catch (err => console.error(err))
-}
+//     fetch("127.0.0.1:3000/api/v1/contacts", {
+//         method: 'POST',
+//         headers: {
+//             "Accept": "application/json, text/plain, */*",
+//             "Content-type": "application/json"
+//         },
+//         body: JSON.stringify(contactAdd)
+//     })
+//     .then ((res) => res.json())
+//     .then ((contactData) => console.log(contactData))
+//     .catch (err => console.error(err))
+// }
 
 //Retrieve new contact from server
 
