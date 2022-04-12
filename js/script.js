@@ -425,8 +425,10 @@ function search() {
 // })
 //Deletes user token from local storage and redirects user to landing page
 
-function logOut(){
+function logOut(e){
+    e.preventDefault()
     localStorage.removeItem('user')
+    window.location.href="login.html"
 }
 
 function deleteContact(x) {
