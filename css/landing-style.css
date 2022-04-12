@@ -1,0 +1,233 @@
+@media only screen and (max-device-width: 480px) {
+    #logo {
+        margin: 0 auto 0 auto;
+    }
+    main section img {
+        margin-top: 4rem;
+    }
+    #slogan {
+        font-size: smaller;
+    }
+    #login, #signup {
+        min-width: 85vw;
+        align-self: center;
+    }
+}    
+
+html, body, main{
+    background-color: #D2EAF5;
+    font-family: 'Roboto Slab', serif;
+    height: 100%;
+    min-height: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+main section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    min-height: 50%;
+    max-height: 50%;
+}
+
+.login {
+    justify-content: space-evenly;
+}
+
+#logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 40%;
+    min-height: 40%;
+    max-height: 40%;
+}
+
+main section img {
+    padding-top: 5%;
+    max-height: 55%;
+}
+
+#slogan {
+    color: #022239;
+    font-weight: 700;
+    padding-top: 5%;
+}
+
+button {
+    height: 20%;
+    width: 20%;
+    border: none;
+    color: #022239;
+    background-color: #00C4EE;
+    transition: all 1s;
+    position: relative;
+}
+
+button:hover {
+    color: #00C4EE;
+    background-color: #022239;
+    border-radius: 2rem;
+}
+
+.forms {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #D2EAF5;
+}
+
+/* Login and Signup pop-ups */
+
+ #login, #signup {
+    position: absolute;
+    display: none;
+    align-self: center;
+    top: 35%;
+    height: 25%;
+    min-width: 60vw;
+    transition: all 1s;
+}
+
+/* CSS to beautify signup and login forms */
+
+.form {
+	max-width:85vw;
+	margin:50px auto 0 auto;
+	background:#fff;
+	border-radius:2px;
+	padding:20px;
+}
+
+.form h1{
+	display: block;
+	text-align: center;
+	padding: 0;
+	margin: 0px 0px 20px 0px;
+	color: #5C5C5C;
+	font-size:x-large;
+}
+.form ul{
+	list-style:none;
+	padding:0;
+	margin:0;	
+}
+.form li{
+	display: block;
+	padding: 9px;
+	border:1px solid #DDDDDD;
+	margin-bottom: 30px;
+	border-radius: 3px;
+}
+.form li:nth-last-child(2) {
+	border:none;
+	margin-bottom: 0px;
+	text-align: center;
+}
+.form li > label{
+	display: block;
+	float: left;
+	margin-top: -19px;
+	background: #FFFFFF;
+	height: 14px;
+	padding: 2px 5px 2px 5px;
+	color: #B9B9B9;
+	font-size: 14px;
+	overflow: hidden;
+}
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"],
+.form textarea,
+.form select 
+{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	display: block;
+	outline: none;
+	border: none;
+	height: 25px;
+	line-height: 25px;
+	font-size: 16px;
+	padding: 0;
+}
+
+.form li > span{
+	background: #F3F3F3;
+	display: block;
+	padding: 3px;
+	margin: 0 -9px -9px -9px;
+	text-align: center;
+	color: #C0C0C0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+.form textarea{
+	resize:none;
+}
+.form input[type="submit"] {
+	height: 2rem;
+    width: 30%;
+    border: none;
+    color: #022239;
+    background-color: #00C4EE;
+    transition: all 1s;
+    position: relative;
+}
+.form input[type="submit"]:hover {
+	color: #00C4EE;
+    background-color: #022239;
+}
+
+.form .cancel {
+    text-align: center;
+    color: #022239;
+    background-color: white;
+    border: none;
+    padding: 0;
+    outline: inherit;
+    transition: all 1s;
+}
+
+.form .cancel:hover {
+    color: #00C4EE;
+}
+
+
+/*CSS Animations*/
+
+.fadeIn {
+    animation: 3s fadeIn;
+}
+
+#logo, #logbutton, #signbutton {
+    animation-delay: .5s;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+}
+
+#logbutton {
+    animation-delay: 1.5s;
+}
+
+#signbutton {
+    animation-delay: 2.5s;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      visibility: visible;
+      opacity: 1;
+    }
+}
