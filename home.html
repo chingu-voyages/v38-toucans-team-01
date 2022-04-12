@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/f2d99d254a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/stylemain.css">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <title>Durante</title>
+</head>
+<body onload="clearField(),all()" >
+    <header>
+        <img src="img/durante-logo/vector/default-monochrome.svg" alt="Durante Logo">
+        <a href="https://toucan-landing.netlify.app/" class="contact-nav" id="logout" onclick="logOut()">Log Out</a>
+    </header>
+    <main>
+        <nav>
+            <span onclick="newContact()" class="contact-nav" id="new-contact"><i class="fa fa-user-plus" aria-hidden="true"></i></span>
+            <ul>
+                <li class="contact-nav" id = "all">All</li>
+                <li>|</li>
+                <li class="contact-nav" id = "favorites">Favorites</li>
+                <li>|</li>
+                <li class="contact-nav" id = "network">Network</li>
+            </ul>
+        </nav>
+        <section>
+            <section class="contacts" id = "contacts">
+            </section>
+            <input id="search" type="text" placeholder="Search All...">
+        </section>
+    </main>
+    <section id="newContact">
+        <form class="form" id="contactForm">
+            <ul>
+                <button id="close-button" onclick="cancel()"><i class="fa-solid fa-x"></i></button>
+                <li id="toggles">
+                    <div class="toggles">
+                        <label class="toggle-control">
+                            <input id="favorite" type="checkbox" checked="checked">
+                            <span class="control"></span>
+                        </label>
+                        <span>Favorite</span>
+                    </div>
+                    <div class="toggles">
+                        <label class="toggle-control">
+                            <input id="profNetwork" type="checkbox" checked="checked">
+                            <span class="control"></span>
+                        </label>
+                        <span>Network</span>
+                    </div>
+                </li>
+                <li>
+                    <label for="first-name">First Name</label>
+                    <input id="firstName" type="text" placeholder="Enter First Name Here" name="first-name">
+                </li>
+                <li>
+                    <label for="last-name">Last Name</label>
+                    <input id="lastName" type="text" placeholder="Enter Last Name Here" name="last-name">
+                </li>
+                <li>
+                    <label for="email">Email</label>
+                    <input id="email" type="email" placeholder="Enter Email Address Here" name="email">
+                </li>
+                <li>
+                    <label for="phone-number">Phone Number</label>
+                    <input id="number" type="text" placeholder="Enter Phone Number Here" name="phone-number">
+                </li>
+                <li>
+                    <label for="linkedin">LinkedIn</label>
+                    <input id="linkedin" type="text" placeholder="Enter LinkedIn Here" name="linkedin">
+                </li>
+                <li>
+                    <label for="instagram">Instagram</label>
+                    <input id="insta" type="text" placeholder="Enter Instagram Handle Here" name="instagram">
+                </li>
+                <li>
+                    <label for="facebook">Facebook</label>
+                    <input id="facebook" type="text" placeholder="Enter Facebook Handle Here" name="facebook">
+                </li>
+                <li>
+                    <label for="twitter">Twitter</label>
+                    <input id="twitter" type="text" placeholder="Enter Twitter Handle Here" name="twitter">
+                </li>
+                <li>
+                    <label for="birthday">Birthday</label>
+                    <input id="birthday" type="text" placeholder="yyyy-mm-dd" name="birthday">
+                </li>
+                <li>
+                    <label for="notes">Notes</label>
+                    <input id="notes" type="text" placeholder="Enter Notes Here" name="notes">
+                </li>
+                <li id="contact-id-hidden">
+                    <label for="contact-id"></label>
+                    <input id="contact-id" type="text" name="contact-id">
+                </li>
+                <li id="submitlist">
+                    <input id="submit" type="submit" value="Add Contact">
+                </li>
+                <li id="editlist">
+                    <input id="edit" type="submit" value="Edit" >
+                </li>
+                <li id="deletelist">
+                    <input id="delete" type="submit" value="Delete">
+                </li>
+                <li class="cancel">
+                    <input class="cancel" type="button" onclick="cancel()" value="Cancel">
+                </li>
+            </ul>
+        </form>
+    </section>
+    <script src="js/script.js"></script> 
+</body>
+</html>
