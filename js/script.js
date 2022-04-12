@@ -82,7 +82,7 @@ contactForm.addEventListener('submit', (e) => {
     const dataArr = [];
     dataArr.push(data);
     all(dataArr)
-    window.location.href="https://durante-main.herokuapp.com";
+    window.location.href="home.html";
     })
     }) 
 
