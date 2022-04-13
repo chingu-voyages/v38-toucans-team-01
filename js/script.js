@@ -162,19 +162,19 @@ function all() {
                 }else
                     text.push(" ")
                 if(contacts.twitter != '') { 
-                    text.push(`<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`)
+                    text.push(`<a href="${twitter.value}" target="_blank"><i class="fa-brands fa-twitter"></i></a>`)
                 }else
                 text.push(" ")
                 if(contacts.instagram != '') { 
-                    text.push(`<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`)
+                    text.push(`<a href="${insta.value}" target="_blank"><i class="fa-brands fa-instagram"></i></a>`)
                 }else
                 text.push(" ")
                 if(contacts.facebook != '') { 
-                    text.push(`<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`)
+                    text.push(`<a href="${facebook.value}" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`)
                 }else
                 text.push(" ")
                 if(contacts.linkedin != '') { 
-                    text.push(`<a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>`)
+                    text.push(`<a href="${linked.value}" target="_blank"><i class="fa-brands fa-linkedin"></i></a>`)
                 }else {
                     text.push(" ")
                 }
@@ -227,22 +227,22 @@ function favorites() {
                     }else
                         text.push(" ")
                     if(contacts.twitter != '') { 
-                        text.push(`<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`)
+                        text.push(`<a href="${twitter.value}" target="_blank"><i class="fa-brands fa-twitter"></i></a>`)
                     }else
-                    text.push(" ")
+                        text.push(" ")
                     if(contacts.instagram != '') { 
-                        text.push(`<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`)
+                        text.push(`<a href="${insta.value}" target="_blank"><i class="fa-brands fa-instagram"></i></a>`)
                     }else
-                    text.push(" ")
+                        text.push(" ")
                     if(contacts.facebook != '') { 
-                        text.push(`<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`)
+                        text.push(`<a href="${facebook.value}" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`)
                     }else
-                    text.push(" ")
+                        text.push(" ")
                     if(contacts.linkedin != '') { 
-                        text.push(`<a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>`)
-                    }else
-                    text.push(" ")
-                    
+                        text.push(`<a href="${linked.value}" target="_blank"><i class="fa-brands fa-linkedin"></i></a>`)
+                    }else {
+                        text.push(" ")
+                    }
                     text.forEach(t => {
                         newSpan = document.createElement("span");
                         newSpan.innerHTML = t;
@@ -292,22 +292,22 @@ function network() {
                     }else
                         text.push(" ")
                     if(contacts.twitter != '') { 
-                        text.push(`<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`)
+                        text.push(`<a href="${twitter.value}" target="_blank"><i class="fa-brands fa-twitter"></i></a>`)
                     }else
-                    text.push(" ")
+                        text.push(" ")
                     if(contacts.instagram != '') { 
-                        text.push(`<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`)
+                        text.push(`<a href="${insta.value}" target="_blank"><i class="fa-brands fa-instagram"></i></a>`)
                     }else
-                    text.push(" ")
+                        text.push(" ")
                     if(contacts.facebook != '') { 
-                        text.push(`<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`)
+                        text.push(`<a href="${facebook.value}" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`)
                     }else
-                    text.push(" ")
+                        text.push(" ")
                     if(contacts.linkedin != '') { 
-                        text.push(`<a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>`)
-                    }else
-                    text.push(" ")
-                    
+                        text.push(`<a href="${linked.value}" target="_blank"><i class="fa-brands fa-linkedin"></i></a>`)
+                    }else {
+                        text.push(" ")
+                    }
                     text.forEach(t => {
                         newSpan = document.createElement("span");
                         newSpan.innerHTML = t;
@@ -360,22 +360,22 @@ function search() {
                     }else
                         text.push(" ")
                     if(contacts.twitter != '') { 
-                        text.push(`<a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter"></i></a>`)
+                        text.push(`<a href="${twitter.value}" target="_blank"><i class="fa-brands fa-twitter"></i></a>`)
                     }else
-                    text.push(" ")
+                        text.push(" ")
                     if(contacts.instagram != '') { 
-                        text.push(`<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>`)
+                        text.push(`<a href="${insta.value}" target="_blank"><i class="fa-brands fa-instagram"></i></a>`)
                     }else
-                    text.push(" ")
+                        text.push(" ")
                     if(contacts.facebook != '') { 
-                        text.push(`<a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`)
+                        text.push(`<a href="${facebook.value}" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>`)
                     }else
-                    text.push(" ")
+                        text.push(" ")
                     if(contacts.linkedin != '') { 
-                        text.push(`<a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>`)
-                    }else
-                    text.push(" ")
-                    
+                        text.push(`<a href="${linked.value}" target="_blank"><i class="fa-brands fa-linkedin"></i></a>`)
+                    }else {
+                        text.push(" ")
+                    }
                     text.forEach(t => {
                         newSpan = document.createElement("span");
                         newSpan.innerHTML = t;
