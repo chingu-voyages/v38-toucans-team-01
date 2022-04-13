@@ -112,8 +112,8 @@ function getContacts(x) {
             linked.value = contact.linkedin
             birthday.value = contact.birthday
             notes.value = contact.notes,
-            favorite.value = favorite.checked,
-            profNetwork.value = profNetwork.checked,
+            favorite.checked = contact.favorite.checked,
+            profNetwork.checked = contact.profNetwork.checked,
             contactID.value = contact.id
             }
             });
@@ -243,6 +243,7 @@ function favorites() {
                     }else {
                         text.push(" ")
                     }
+                    text.push(`<a href="#" onclick="deleteContact(${contacts.id}); return false;"><i class="fa fa-trash" aria-hidden="true"></i></a>`);
                     text.forEach(t => {
                         newSpan = document.createElement("span");
                         newSpan.innerHTML = t;
@@ -308,6 +309,7 @@ function network() {
                     }else {
                         text.push(" ")
                     }
+                    text.push(`<a href="#" onclick="deleteContact(${contacts.id}); return false;"><i class="fa fa-trash" aria-hidden="true"></i></a>`);
                     text.forEach(t => {
                         newSpan = document.createElement("span");
                         newSpan.innerHTML = t;
@@ -376,6 +378,7 @@ function search() {
                     }else {
                         text.push(" ")
                     }
+                    text.push(`<a href="#" onclick="deleteContact(${contacts.id}); return false;"><i class="fa fa-trash" aria-hidden="true"></i></a>`);
                     text.forEach(t => {
                         newSpan = document.createElement("span");
                         newSpan.innerHTML = t;
@@ -437,4 +440,5 @@ function deleteContact(x) {
     })
     .then(res => res.json())
     .then(res => console.log(res))
+    all()
 }
