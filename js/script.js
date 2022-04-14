@@ -70,6 +70,7 @@ contactForm.addEventListener('submit', (e) => {
             notes: notes.value,
             instagram: insta.value,
             facebook: facebook.value,
+            linkedin: linked.value,
             twitter: twitter.value,
             favorite: favorite.checked,
             profnetwork: profNetwork.checked
