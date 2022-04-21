@@ -47,15 +47,15 @@ function cancel() {
     document.getElementById("newContact").style.display = "none";
 }
 
-//Add new contact
+//Add new contact, Delete contact, Edit contact
 
 let contactForm = document.getElementById('contactForm')
 
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault()
-    
-    
-    fetch('https://durante.herokuapp.com/api/v1/contacts',{
+
+    if (document.activeElement['value'] == 'Add Contact') {
+        fetch('https://durante.herokuapp.com/api/v1/contacts',{
         method: 'POST',
         headers:{
             'content-Type': 'application/json',
@@ -74,18 +74,61 @@ contactForm.addEventListener('submit', (e) => {
             twitter: twitter.value,
             favorite: favorite.checked,
             profnetwork: profNetwork.checked
-        
         }) 
     })
     .then(res => res.json())
     .then(data => {
         console.log(data)
-    const dataArr = [];
-    dataArr.push(data);
-    all(dataArr)
-    window.location.href="home.html";
+        const dataArr = [];
+        dataArr.push(data);
+        all(dataArr)
+        window.location.href="home.html";
+        })
+    } else if (document.activeElement['value'] == 'Delete') {
+        fetch(`https://durante.herokuapp.com/api/v1/contacts/${contactID.value}`, {
+        method: 'DELETE'
     })
-    }) 
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+        const dataArr = [];
+        dataArr.push(data);
+        all(dataArr)
+        window.location.href="home.html";
+        })
+    } else if (document.activeElement['value'] == 'Edit') {
+        fetch(`https://durante.herokuapp.com/api/v1/contacts/${contactID.value}`,{
+        method: 'PATCH',
+        headers:{
+            'content-Type': 'application/json',
+            Authorization: `Bearer ${localStorage.getItem('user')}`
+        },
+        body: JSON.stringify({
+            firstname: firstName.value[0].toUpperCase() + firstName.value.substring(1),
+            lastname: lastName.value[0].toUpperCase() + lastName.value.substring(1),
+            phonenumber: number.value,
+            birthday: birthday.value,
+            email: email.value,
+            notes: notes.value,
+            instagram: insta.value,
+            facebook: facebook.value,
+            linkedin: linked.value,
+            twitter: twitter.value,
+            favorite: favorite.checked,
+            profnetwork: profNetwork.checked
+            }) 
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            const dataArr = [];
+            dataArr.push(data);
+            all(dataArr)
+            window.location.href="home.html";
+        })
+        
+    }
+})
 
 //Retrieve new contact from server
 
@@ -179,7 +222,6 @@ function all() {
                 }else {
                     text.push(" ")
                 }
-                text.push(`<a href="#" onclick="deleteContact(${contacts.id}); return false;"><i class="fa fa-trash" aria-hidden="true"></i></a>`);
                 text.forEach(t => {
                     newSpan = document.createElement("span");
                     newSpan.innerHTML = t;
@@ -244,7 +286,6 @@ function favorites() {
                     }else {
                         text.push(" ")
                     }
-                    text.push(`<a href="#" onclick="deleteContact(${contacts.id}); return false;"><i class="fa fa-trash" aria-hidden="true"></i></a>`);
                     text.forEach(t => {
                         newSpan = document.createElement("span");
                         newSpan.innerHTML = t;
@@ -310,7 +351,6 @@ function network() {
                     }else {
                         text.push(" ")
                     }
-                    text.push(`<a href="#" onclick="deleteContact(${contacts.id}); return false;"><i class="fa fa-trash" aria-hidden="true"></i></a>`);
                     text.forEach(t => {
                         newSpan = document.createElement("span");
                         newSpan.innerHTML = t;
@@ -379,7 +419,6 @@ function search() {
                     }else {
                         text.push(" ")
                     }
-                    text.push(`<a href="#" onclick="deleteContact(${contacts.id}); return false;"><i class="fa fa-trash" aria-hidden="true"></i></a>`);
                     text.forEach(t => {
                         newSpan = document.createElement("span");
                         newSpan.innerHTML = t;
@@ -390,44 +429,7 @@ function search() {
         })
 }
 
-//Edit existing Contact
-
-// function editContact() {
-//     let first = firstName.value;
-//     let last = lastName.value;
-//     let address = email.value;
-//     let phone = number.value;
-//     let gram = insta.value;
-//     let tweet = twitter.value;
-//     let bday = birthday.value;
-//     let info = notes.value;
-
-//     fetch("127.0.0.1:3000/api/v1/contacts", {
-//         method: 'PUT',
-//         headers: {
-//             "Accept": "application/json, text/plain, */*",
-//             "Content-type": "application/json"
-//         },
-//         body: JSON.stringify({firstName:first,lastName:last, email:address, number:phone, insta:gram, twitter:tweet, birthday:bday, notes:info})
-//     })
-//     .then ((res) => res.json())
-//     .then ((data) => console.log(data))
-//     .catch (err => console.error(err))
-// }
-
-//Delete existing Contact
-
-// document.getElementById('delete').addEventListener('submit', (e) => {
-//     e.preventDefault()
-
-//     fetch(`https://durante.herokuapp.com/api/v1/contacts/${contactID.value}`, {
-//         method: 'DELETE'
-//     })
-//     .then(res => res.json())
-//     .then(data => console.log(data))
-//     all()
-// })
-//Deletes user token from local storage and redirects user to landing page
+//Logs out user, deleting key from local storage and returning them to landing page
 
 function logOut(e){
     e.preventDefault()
@@ -435,11 +437,3 @@ function logOut(e){
     window.location.href="login.html"
 }
 
-function deleteContact(x) {
-    fetch(`https://durante.herokuapp.com/api/v1/contacts/${x}`, {
-        method: 'DELETE'
-    })
-    .then(res => res.json())
-    .then(res => console.log(res))
-    all()
-}
