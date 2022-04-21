@@ -114,7 +114,7 @@ function getContacts(x) {
             birthday.value = contact.birthday
             notes.value = contact.notes,
             favorite.checked = contact.favorite,
-            profNetwork.checked = contact.profNetwork,
+            profNetwork.checked = contact.profnetwork,
             contactID.value = contact.id
             }
             });
