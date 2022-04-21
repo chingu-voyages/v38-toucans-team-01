@@ -91,14 +91,12 @@ contactForm.addEventListener('submit', (e) => {
     .then(res => res.json())
     .then(data => {
         console.log(data)
-        const dataArr = [];
-        dataArr.push(data);
-        all(dataArr)
-        window.location.href="home.html";
+        cancel();
+        all()
         })
     } else if (document.activeElement['value'] == 'Edit') {
         fetch(`https://durante.herokuapp.com/api/v1/contacts/${contactID.value}`,{
-        method: 'PATCH',
+        method: 'PUT',
         headers:{
             'content-Type': 'application/json',
             Authorization: `Bearer ${localStorage.getItem('user')}`
@@ -121,10 +119,8 @@ contactForm.addEventListener('submit', (e) => {
         .then(res => res.json())
         .then(data => {
             console.log(data)
-            const dataArr = [];
-            dataArr.push(data);
-            all(dataArr)
-            window.location.href="home.html";
+            cancel();
+            all();
         })
         
     }
