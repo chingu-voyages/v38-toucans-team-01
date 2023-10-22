@@ -18,7 +18,7 @@ Durante is a phone book web app ideal for students and working professionals. Yo
 
 #### LIVE LINK
 
-[Durante](https://durante-main.herokuapp.com/login.html)  
+[Durante](https://durante-main.herokuapp.com/login.html) - LINK NO LONGER LIVE 
 
 
 ## Overview
